@@ -1340,3 +1340,45 @@ a:hover { color: var(--amber); }
 .pos-metrics {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+
+.how {
+  padding: 2.5rem 1.25rem 1.5rem;
+  border-top: 1px solid var(--line-soft);
+}
+.how-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.how-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+.how-steps li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.95rem;
+  counter-increment: how;
+  position: relative;
+  padding-left: 2.6rem;
+}
+.how-steps {
+  counter-reset: how;
+}
+.how-steps li::before {
+  content: counter(how);
+  position: absolute;
+  left: 0.85rem;
+  top: 0.95rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--dim);
+}
+.how-steps strong { color: var(--text); font-weight: 600; }
