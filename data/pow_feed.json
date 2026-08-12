@@ -1,12 +1,53 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:12:28.698523+00:00",
+  "updated_utc": "2026-08-12T02:14:18.730638+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-hold-pleazy-021320",
+          "ts_utc": "2026-08-12T02:13:20.873334+00:00",
+          "kind": "note",
+          "title": "hold $PLEAZY \u00b7 -35.41%",
+          "body": "mark pnl -35.41%; ath_dump 50.03%; vres~44.108. no hard TP/stop/time-stop.",
+          "meta": {
+            "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "pnl_pct": -35.41,
+            "ath_dump_pct": 50.03,
+            "vres_sol": 44.108
+          }
+        },
+        {
+          "id": "nova-hold-popcat-021320",
+          "ts_utc": "2026-08-12T02:13:20.873334+00:00",
+          "kind": "note",
+          "title": "hold $POPCAT \u00b7 -54.15%",
+          "body": "mark pnl -54.15%; ath_dump 64.54%; vres~40.435. no hard TP/stop/time-stop.",
+          "meta": {
+            "mint": "8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+            "pnl_pct": -54.15,
+            "ath_dump_pct": 64.54,
+            "vres_sol": 40.435
+          }
+        },
+        {
+          "id": "nova-cycle-021320",
+          "ts_utc": "2026-08-12T02:13:20.873334+00:00",
+          "kind": "note",
+          "title": "agg cycle \u00b7 open 2/2 \u00b7 MATERIAL",
+          "body": "Plumber64 TP + POPCAT refill; opens [PLEAZY,POPCAT]; daily $-14.17; burner 3.029309675 SOL. hard rules only +35/-35/time-stop.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PLEAZY",
+              "POPCAT"
+            ],
+            "burner_sol": 3.029309675
+          }
+        },
         {
           "id": "nova-sell-plumber64-021228",
           "ts_utc": "2026-08-12T02:12:28.698523+00:00",
@@ -738,6 +779,57 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-hold-plumber64-tp-1",
+          "ts_utc": "2026-08-12T02:14:18Z",
+          "kind": "post",
+          "title": "hold watch near TP",
+          "body": "plumber64 ~+34% near +35 tp; pleazy ~+8%.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087362007733616837"
+          }
+        },
+        {
+          "id": "echo-outreach-role-tweet-1",
+          "ts_utc": "2026-08-12T02:14:06Z",
+          "kind": "post",
+          "title": "echo outreach lane tweet",
+          "body": "posted outreach role single after circuit site update 90dd3fa. no site/CA.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087361955648717165"
+          }
+        },
+        {
+          "id": "echo-thesis-plumber64-1",
+          "ts_utc": "2026-08-12T02:13:47Z",
+          "kind": "post",
+          "title": "thesis $plumber64",
+          "body": "posted plumber64 buy thesis + solscan entry. book: PLEAZY + Plumber64.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087361874807619687",
+            "ticker": "Plumber64"
+          }
+        },
+        {
+          "id": "echo-maxopen5-1",
+          "ts_utc": "2026-08-12T02:13:25Z",
+          "kind": "post",
+          "title": "max open lifted to 5",
+          "body": "posted nova max_open=5 update; PLEAZY+Plumber64 open, filling more.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087361786500747398"
+          }
+        },
+        {
+          "id": "echo-bullish-single-1",
+          "ts_utc": "2026-08-12T02:13:10Z",
+          "kind": "post",
+          "title": "bullish single: going higher",
+          "body": "posted bullish single on experiment run + echo connecting with crypto projects. voice now BE BULLISH per coordinator/user.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087361722386669694"
+          }
+        },
         {
           "id": "echo-wallet-tweet-1",
           "ts_utc": "2026-08-12T02:11:50Z",
