@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T02:01:09.542213+00:00",
+  "generated_utc": "2026-08-12T02:01:54.799Z",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -25,12 +25,12 @@
   },
   "pnl": {
     "realized_usd": -5.6129,
-    "unrealized_usd": 2.9672,
+    "unrealized_usd": 2.5258,
     "open_count": 2,
     "closed_count": 3,
     "currency": "USD",
-    "unrealized_sol": 0.038857,
-    "sol_usd": 76.36,
+    "unrealized_sol": 0.033077,
+    "sol_usd": 76.37,
     "realized_sol": -0.073368
   },
   "open_positions": [
@@ -54,17 +54,17 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 12225.912187747588,
-      "mark_mcap_usd": 13049.48565697637,
+      "mark_mcap_usd": 12534.064417010055,
       "ath_mcap_usd": 16120.98604967223,
-      "ath_dump_pct": 19.05,
-      "pnl_pct": 6.74,
-      "pnl_usd": 0.6687,
-      "pnl_sol": 0.008757,
-      "unrealized_usd": 0.6687,
-      "unrealized_sol": 0.008757,
+      "ath_dump_pct": 22.25,
+      "pnl_pct": 2.52,
+      "pnl_usd": 0.2502,
+      "pnl_sol": 0.003277,
+      "unrealized_usd": 0.2502,
+      "unrealized_sol": 0.003277,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 6.74% (need +35 TP / -35 stop); ath_dump 19.05% (<40); hold_age 7.94m (<45m time-stop)",
+      "decision_note": "pnl 2.52%; ath_dump 22.25; hold under TP/stop/time rules",
       "image_url": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq",
       "image_uri": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq"
     },
@@ -88,17 +88,17 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 7154.269487432113,
-      "mark_mcap_usd": 8810.770927096206,
+      "mark_mcap_usd": 8794.292242433019,
       "ath_mcap_usd": 8939.050989550922,
-      "ath_dump_pct": 1.44,
-      "pnl_pct": 23.15,
-      "pnl_usd": 2.2985,
-      "pnl_sol": 0.0301,
-      "unrealized_usd": 2.2985,
-      "unrealized_sol": 0.0301,
+      "ath_dump_pct": 1.62,
+      "pnl_pct": 22.92,
+      "pnl_usd": 2.2756,
+      "pnl_sol": 0.029801,
+      "unrealized_usd": 2.2756,
+      "unrealized_sol": 0.029801,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 23.15% (need +35 TP / -35 stop); ath_dump 1.44% (<40); hold_age 3.29m (<45m time-stop)",
+      "decision_note": "pnl 22.92%; ath_dump 1.62; hold under TP/stop/time rules",
       "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
       "image_uri": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp"
     }
@@ -138,8 +138,8 @@
       "realized_sol": 0.023257,
       "realized_pnl_usd": 1.7759,
       "realized_pnl_sol": 0.023257,
-      "unrealized_usd": 0.0,
-      "unrealized_sol": 0.0,
+      "unrealized_usd": 0,
+      "unrealized_sol": 0,
       "complete": false,
       "decision": "OVERCAP_FLATTEN",
       "decision_note": "race with concurrent PLEAZY fill breached max_open=2; sold 100% pool=auto slip=40",
@@ -168,8 +168,8 @@
       "entry_mcap_usd": 21965.5504563218,
       "mark_mcap_usd": 5610.8965937427165,
       "pnl_sol": -0.096793,
-      "unrealized_usd": 0.0,
-      "unrealized_sol": 0.0,
+      "unrealized_usd": 0,
+      "unrealized_sol": 0,
       "ath_mcap_usd": 32201.16097917802,
       "ath_dump_pct": 82.58,
       "complete": true,
@@ -228,7 +228,8 @@
     "fee_destination_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
-    "note": "Project coin fees auto-swap to trading burner as capital inside hard caps."
+    "note": "fees claimed; trading active; inbound fee SOL treated as capital inside caps; burner_sol 1.815251214 (prev 1.815251214); DEX paid.",
+    "updated_utc": "2026-08-12T02:01:54.799Z"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -276,13 +277,15 @@
     "user_session_greenlight": true,
     "project_coin_mint_known": true,
     "fee_routing_configured": true,
-    "note": "AUTO ARMED: small live buys+exits under caps, no per-trade approval. Kill switch on. Cadence 5m.",
+    "note": "fees claimed; trading active; inbound fee SOL treated as capital inside caps",
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "burner_sol": 1.815251214,
     "helius_ready": true,
-    "dex_paid": true
+    "dex_paid": true,
+    "rpc_host": "mainnet.helius-rpc.com",
+    "updated_utc": "2026-08-12T02:01:54.799Z"
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -294,17 +297,14 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T02:01:09.542213+00:00",
-    "type": "auto_small_live_capped_5m",
-    "pv": "HOLD",
-    "pv_pnl_pct": 6.74,
-    "pleazy": "HOLD",
-    "pleazy_pnl_pct": 23.15,
-    "toadbull": "BUY_THEN_OVERCAP_FLATTEN",
-    "toadbull_buy_sig": "4PKRf6ug9XJLsnpqE8KkZYpLV6hV9WKNQRpFcgeJXWqVyp2XY9CXnfRS978epNwTsFxWG5UUbhGzrQc42Nwt3Wz3",
-    "toadbull_sell_sig": "5eox9PNgxshRceSEMn6yyu4L9VpMmH6LFAG5gPfFXPVwd8Tp1t7kRJ3jN6h68EB4TfURnwhKVyHokdBL8tRJEXGH",
-    "toadbull_pnl_pct": 17.89,
-    "buy_ok": true,
-    "sell_ok": true
+    "ts_utc": "2026-08-12T02:01:54.799Z",
+    "type": "nova_book_refresh_feed_push_prep",
+    "burner_sol": 1.815251214,
+    "pleazy_confirmed": true,
+    "pleazy_added": false,
+    "opens": [
+      "PV",
+      "PLEAZY"
+    ]
   }
 }
