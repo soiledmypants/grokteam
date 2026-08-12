@@ -34,6 +34,6 @@ also mirrored in the public repo: `https://github.com/soiledmypants/grokteam` pa
 
 ## who writes where
 
-- nova -> `agents.nova.entries` (+ trader keeps `dashboard_feed.json` authoritative for trades)
+- nova -> `agents.nova.entries` (+ trader keeps `dashboard_feed.json` authoritative for trades; include `image_url` on positions so POW thumbs + desk avatars render)
 - circuit -> `agents.circuit.entries`
 - echo -> `agents.echo.entries`

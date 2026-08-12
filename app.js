@@ -58,6 +58,29 @@
       .replace(/"/g, "&quot;");
   }
 
+
+  function shortAddr(s) {
+    if (s == null || s === "") return "-";
+    const str = String(s);
+    if (str.length <= 10) return str;
+    return str.slice(0, 4) + "…" + str.slice(-4);
+  }
+
+  function coinImage(p) {
+    if (!p) return "";
+    const candidates = [
+      p.image_url,
+      p.image_uri,
+      p.image,
+      p.logo_uri,
+      p.metadata && p.metadata.image,
+    ];
+    for (const c of candidates) {
+      if (c != null && String(c).trim()) return String(c).trim();
+    }
+    return "";
+  }
+
   function pnlClass(n) {
     if (n == null || Number.isNaN(n) || n === 0) return "pnl-flat";
     return n > 0 ? "pnl-pos" : "pnl-neg";
@@ -139,26 +162,64 @@
 
     grid.innerHTML = positions
       .map((p) => {
-        const grade = (p.setup_grade || "?").toUpperCase();
+        const grade = (p.setup_grade || p.grade || "?").toUpperCase();
+        const gradeKey = grade.replace(/[^A-Za-z0-9]/g, "") || "X";
         const uPnl = p.unrealized_usd != null ? p.unrealized_usd : p.pnl_usd;
         const markPending = p.unrealized_usd == null && p.pnl_usd == null;
         const markLine = markPending
           ? "- · mark pending"
           : `${fmtUsd(uPnl, { signed: true })} · ${fmtPct(p.pnl_pct)}` +
             (p.unrealized_sol != null ? ` · ${fmtSol(p.unrealized_sol)}` : "");
-        const link = p.url
-          ? `<div class="pos-link"><a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">pump.fun ↗</a></div>`
+        const img = coinImage(p);
+        const letter = String(p.ticker || "?").trim().charAt(0).toUpperCase() || "?";
+        const avatar = img
+          ? `<div class="pos-avatar"><img src="${escapeHtml(img)}" alt="" loading="lazy" /></div>`
+          : `<div class="pos-avatar placeholder" aria-hidden="true">${escapeHtml(letter)}</div>`;
+        const decision = p.decision
+          ? `<span class="decision-badge">${escapeHtml(String(p.decision).toUpperCase())}</span>`
+          : "";
+        const mint = p.mint || p.ca || "";
+        const mintLine = mint
+          ? `<div class="pos-mint" title="${escapeHtml(mint)}"><span class="metric-k">Mint / CA</span><code class="mono">${escapeHtml(mint)}</code> <span class="copy-hint">copy</span></div>`
+          : `<div class="pos-mint"><span class="metric-k">Mint / CA</span><code class="mono">-</code></div>`;
+        const entrySig = p.entry_sig || "";
+        const solscan = p.solscan || "#";
+        const sigHref = p.solscan ? escapeHtml(p.solscan) : "#";
+        const sigLine = `<div class="pos-sig"><span class="metric-k">Entry sig</span><a class="mono" href="${sigHref}" ${p.solscan ? 'target="_blank" rel="noopener noreferrer"' : ""} title="${escapeHtml(entrySig || "")}">${escapeHtml(shortAddr(entrySig))}</a></div>`;
+        const desc = p.description
+          ? `<div>
+              <div class="block-label">Coin</div>
+              <p class="block-body">${escapeHtml(p.description)}</p>
+            </div>`
+          : "";
+        const links = [];
+        if (p.url) {
+          links.push(`<a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">pump.fun ↗</a>`);
+        }
+        if (p.solscan) {
+          links.push(`<a href="${escapeHtml(p.solscan)}" target="_blank" rel="noopener noreferrer">solscan entry ↗</a>`);
+        }
+        const linksRow = links.length
+          ? `<div class="pos-links">${links.join("")}</div>`
           : "";
 
         return `
         <article class="pos-card" role="listitem" data-id="${escapeHtml(p.id || p.ticker)}">
           <div class="pos-left">
-            <div class="pos-top">
-              <div class="pos-ticker-row">
-                <span class="pos-ticker">$${escapeHtml(p.ticker)}</span>
-                <span class="pos-name">${escapeHtml(p.name || "")}</span>
+            <div class="pos-head">
+              ${avatar}
+              <div class="pos-head-main">
+                <div class="pos-top">
+                  <div class="pos-ticker-row">
+                    <span class="pos-ticker">$${escapeHtml(p.ticker)}</span>
+                    <span class="pos-name">${escapeHtml(p.name || "")}</span>
+                  </div>
+                  <div class="pos-badges">
+                    <span class="grade grade-${escapeHtml(gradeKey)}" title="setup grade">GRADE ${escapeHtml(grade)}</span>
+                    ${decision}
+                  </div>
+                </div>
               </div>
-              <span class="grade grade-${escapeHtml(grade)}" title="setup grade">GRADE ${escapeHtml(grade)}</span>
             </div>
             <div class="pos-metrics">
               <div>
@@ -180,17 +241,20 @@
                 </span>
               </div>
             </div>
+            ${mintLine}
+            ${sigLine}
           </div>
           <div class="pos-right">
             <div>
               <div class="block-label">Thesis</div>
               <p class="block-body">${escapeHtml(p.thesis)}</p>
             </div>
+            ${desc}
             <div>
               <div class="block-label">Invalidation</div>
               <p class="block-body inv">${escapeHtml(p.invalidation)}</p>
             </div>
-            ${link}
+            ${linksRow}
           </div>
         </article>`;
       })
@@ -202,29 +266,63 @@
     if (!body) return;
 
     if (!positions || !positions.length) {
-      body.innerHTML = `<tr><td colspan="5" class="empty-state" style="border:none">No closed positions</td></tr>`;
+      body.innerHTML = `<tr><td colspan="7" class="empty-state" style="border:none">No closed positions</td></tr>`;
       return;
     }
 
     body.innerHTML = positions
       .map((p) => {
-        const grade = (p.grade || "?").toUpperCase();
+        const grade = (p.setup_grade || p.grade || "?").toUpperCase();
+        const gradeKey = grade.replace(/[^A-Za-z0-9]/g, "") || "X";
+        const img = coinImage(p);
+        const letter = String(p.ticker || "?").trim().charAt(0).toUpperCase() || "?";
+        const thumb = img
+          ? `<img class="closed-thumb" src="${escapeHtml(img)}" alt="" loading="lazy" />`
+          : `<span class="closed-thumb placeholder" aria-hidden="true">${escapeHtml(letter)}</span>`;
+        const mint = p.mint || p.ca || "";
+        const entryHref = p.solscan ? escapeHtml(p.solscan) : "#";
+        const exitHref = p.solscan_exit ? escapeHtml(p.solscan_exit) : "#";
+        const entryLink = p.entry_sig
+          ? `<a class="mono" href="${entryHref}" ${p.solscan ? 'target="_blank" rel="noopener noreferrer"' : ""} title="${escapeHtml(p.entry_sig)}">${escapeHtml(shortAddr(p.entry_sig))}</a>`
+          : "-";
+        const exitLink = p.exit_sig
+          ? `<a class="mono" href="${exitHref}" ${p.solscan_exit ? 'target="_blank" rel="noopener noreferrer"' : ""} title="${escapeHtml(p.exit_sig)}">${escapeHtml(shortAddr(p.exit_sig))}</a>`
+          : "-";
+        const exitTxt = p.exit_reason || p.exit_rule || "-";
         return `
         <tr>
-          <td><span class="closed-ticker">$${escapeHtml(p.ticker)}</span></td>
-          <td><span class="grade grade-${escapeHtml(grade)}">${escapeHtml(grade)}</span></td>
+          <td>
+            <div class="closed-ticker-cell">
+              ${thumb}
+              <div>
+                <span class="closed-ticker">$${escapeHtml(p.ticker)}</span>
+                <div class="closed-name">${escapeHtml(p.name || "")}</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="grade grade-${escapeHtml(gradeKey)}">${escapeHtml(grade)}</span></td>
           <td>
             <span class="closed-pnl ${pnlClass(p.pnl_usd)}">
               ${escapeHtml(fmtUsd(p.pnl_usd, { signed: true }))}
               <small>${escapeHtml(fmtPct(p.pnl_pct))}</small>
             </span>
           </td>
-          <td><div class="closed-rule">${escapeHtml(p.exit_rule || "-")}</div></td>
+          <td>
+            <div class="pos-mint closed-mint" title="${escapeHtml(mint)}"><code class="mono">${escapeHtml(shortAddr(mint))}</code></div>
+          </td>
+          <td>
+            <div class="pos-sig closed-sigs">
+              <span>in ${entryLink}</span>
+              <span>out ${exitLink}</span>
+            </div>
+          </td>
+          <td><div class="closed-rule">${escapeHtml(exitTxt)}</div></td>
           <td class="hide-sm"><div class="closed-thesis">${escapeHtml(p.thesis || "-")}</div></td>
         </tr>`;
       })
       .join("");
   }
+
 
 
 
@@ -426,6 +524,7 @@
     for (const p of feed.open_positions || []) {
       const uPnl = p.unrealized_usd != null ? p.unrealized_usd : p.pnl_usd;
       const pnlBit = uPnl == null ? "" : " · " + fmtUsd(uPnl, { signed: true });
+      const imgUrl = coinImage(p);
       const meta = {
         status: "open",
         mint: p.mint,
@@ -433,6 +532,10 @@
         notional_usd: p.notional_usd,
         entry_mcap_usd: p.entry_mcap_usd,
       };
+      if (imgUrl) {
+        meta.image_url = imgUrl;
+        if (p.image_uri) meta.image_uri = p.image_uri;
+      }
       if (p.mark_mcap_usd != null) meta.mark_mcap_usd = p.mark_mcap_usd;
       if (p.unrealized_usd != null) meta.unrealized_usd = p.unrealized_usd;
       if (p.pnl_pct != null) meta.pnl_pct = p.pnl_pct;
@@ -453,7 +556,13 @@
         kind: "trade",
         title: "closed $" + (p.ticker || "?") + pnl,
         body: (p.thesis || "-") + (p.exit_rule ? " | exit: " + p.exit_rule : ""),
-        meta: { status: "closed", mint: p.mint, pnl_usd: p.pnl_usd, pnl_pct: p.pnl_pct },
+        meta: (() => {
+          const imgUrl = coinImage(p);
+          const m = { status: "closed", mint: p.mint, pnl_usd: p.pnl_usd, pnl_pct: p.pnl_pct };
+          if (imgUrl) m.image_url = imgUrl;
+          if (p.image_uri) m.image_uri = p.image_uri;
+          return m;
+        })(),
       });
     }
     return out;
@@ -484,13 +593,17 @@
         const link = e.meta && e.meta.url
           ? `<a class="pow-link" href="${escapeHtml(e.meta.url)}" target="_blank" rel="noopener noreferrer">open ↗</a>`
           : "";
+        const thumbSrc = e.meta && (e.meta.image_url || e.meta.image_uri);
+        const thumb = thumbSrc
+          ? `<img class="pow-thumb" src="${escapeHtml(thumbSrc)}" alt="" loading="lazy" />`
+          : "";
         return `<article class="pow-item">
           <div>
             <div class="pow-time mono">${escapeHtml(relativeAge(e.ts_utc))}</div>
             <div class="pow-kind">${escapeHtml(e.kind || "note")}</div>
           </div>
           <div>
-            <h3 class="pow-title">${escapeHtml(e.title || "")}</h3>
+            <div class="pow-title-row">${thumb}<h3 class="pow-title">${escapeHtml(e.title || "")}</h3></div>
             <p class="pow-body">${escapeHtml(cleanCopy(e.body || ""))}</p>
             ${link}
           </div>
@@ -526,8 +639,29 @@
     }
   }
 
+  function wireMintCopy() {
+    document.addEventListener("click", async (e) => {
+      const mint = e.target.closest && e.target.closest(".pos-mint");
+      if (!mint) return;
+      const code = mint.querySelector("code");
+      const full = mint.getAttribute("title") || (code && code.textContent) || "";
+      if (!full || full === "-") return;
+      try {
+        await navigator.clipboard.writeText(full);
+        const hint = mint.querySelector(".copy-hint");
+        if (hint) {
+          hint.textContent = "copied";
+          setTimeout(() => (hint.textContent = "copy"), 1200);
+        }
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+
   wirePowTabs();
   wireCa();
+  wireMintCopy();
   loadFeed();
   loadPow();
   setInterval(loadPow, 8000);
