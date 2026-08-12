@@ -2,6 +2,7 @@
   "use strict";
 
   const FEED_URL = "./data/dashboard_feed.json";
+  const cacheBust = (url) => url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
   const CA_PLACEHOLDER = "CA coming soon";
 
   const $ = (id) => document.getElementById(id);
@@ -561,7 +562,7 @@
 
   async function loadFeed() {
     try {
-      const res = await fetch(FEED_URL, { cache: "no-store" });
+      const res = await fetch(cacheBust(FEED_URL), { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const feed = await res.json();
 
@@ -702,7 +703,7 @@
 
   async function loadPow() {
     try {
-      const res = await fetch(POW_URL, { cache: "no-store" });
+      const res = await fetch(cacheBust(POW_URL), { cache: "no-store" });
       if (!res.ok) throw new Error("pow http " + res.status);
       powCache = await res.json();
       renderPow();
