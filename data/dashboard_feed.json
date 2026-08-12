@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T02:07:11.481285+00:00",
+  "generated_utc": "2026-08-12T02:07:52.167845+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -25,11 +25,11 @@
   },
   "pnl": {
     "realized_usd": -9.3249,
-    "unrealized_usd": 3.4098,
+    "unrealized_usd": 3.9073,
     "open_count": 2,
     "closed_count": 4,
     "currency": "USD",
-    "unrealized_sol": 0.044637,
+    "unrealized_sol": 0.051149,
     "sol_usd": 76.39,
     "realized_sol": -0.121948
   },
@@ -54,17 +54,17 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 7154.269487432113,
-      "mark_mcap_usd": 7744.860496824997,
+      "mark_mcap_usd": 7750.642010642904,
       "ath_mcap_usd": 9247.253322158875,
-      "ath_dump_pct": 16.25,
-      "pnl_pct": 8.26,
-      "pnl_usd": 0.8198,
-      "pnl_sol": 0.010732,
-      "unrealized_usd": 0.8198,
-      "unrealized_sol": 0.010732,
+      "ath_dump_pct": 16.18,
+      "pnl_pct": 8.34,
+      "pnl_usd": 0.8278,
+      "pnl_sol": 0.010837,
+      "unrealized_usd": 0.8278,
+      "unrealized_sol": 0.010837,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 8.26%; ath_dump 16.25%; hold under TP/stop/time rules",
+      "decision_note": "pnl 8.34%; ath_dump 16.18%; hold under TP/stop/time rules",
       "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
       "image_uri": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
       "vres_sol": 57.115
@@ -89,17 +89,17 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 10572.091343300266,
-      "mark_mcap_usd": 13329.382473310434,
-      "ath_mcap_usd": 14570.768295086084,
-      "ath_dump_pct": 8.52,
-      "pnl_pct": 26.08,
-      "pnl_usd": 2.59,
-      "pnl_sol": 0.033905,
-      "unrealized_usd": 2.59,
-      "unrealized_sol": 0.033905,
+      "mark_mcap_usd": 13850.450514363378,
+      "ath_mcap_usd": 15267.549178607704,
+      "ath_dump_pct": 9.28,
+      "pnl_pct": 31.01,
+      "pnl_usd": 3.0795,
+      "pnl_sol": 0.040312,
+      "unrealized_usd": 3.0795,
+      "unrealized_sol": 0.040312,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 26.08%; ath_dump 8.52%; hold under TP/stop/time rules",
+      "decision_note": "pnl 31.01%; ath_dump 9.28%; hold under TP/stop/time rules",
       "image_url": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
       "image_uri": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
       "vres_sol": 74.92
@@ -274,7 +274,7 @@
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
     "note": "fees claimed; trading active; inbound fee SOL = capital inside caps",
-    "updated_utc": "2026-08-12T02:07:11.481285+00:00"
+    "updated_utc": "2026-08-12T02:07:52.167845+00:00"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -326,11 +326,11 @@
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 2.485600102,
+    "burner_sol": 2.72835214,
     "helius_ready": true,
     "dex_paid": true,
     "rpc_host": "mainnet.helius-rpc.com",
-    "updated_utc": "2026-08-12T02:07:11.481285+00:00"
+    "updated_utc": "2026-08-12T02:07:52.167845+00:00"
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -342,17 +342,18 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T02:07:11.481285+00:00",
+    "ts_utc": "2026-08-12T02:07:52.167845+00:00",
     "type": "auto_small_live_capped_5m",
+    "pv": "STOP_FLATTEN",
+    "pv_exit_sig": "57cFq4upEfWfaESyrFKyRszvPFm2rAbHNpA6cKR9TJ8r4YqNwevGLGNdp75ANhxupEEmTaFsrs8ZENxdQo9CNhsS",
+    "pleazy": "HOLD",
+    "buy_ticker": "Plumber64",
+    "buy_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
+    "buy_ok": true,
+    "material": true,
     "opens": [
       "PLEAZY",
       "Plumber64"
-    ],
-    "material": true,
-    "slot_freed": true,
-    "buy_ticker": "Plumber64",
-    "buy_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
-    "pv": "STOP_FLATTEN",
-    "finalize_only": true
+    ]
   }
 }
