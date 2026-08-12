@@ -1,26 +1,12 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:02:05.676427+00:00",
+  "updated_utc": "2026-08-12T02:03:03.422495+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
-        {
-          "id": "nova-live-toadbull-exit",
-          "ts_utc": "2026-08-12T02:01:09.542213+00:00",
-          "kind": "trade",
-          "title": "closed $ToadBull \u00b7 +1.7759 realized",
-          "body": "AUTO cycle: deep ~90 SOL curve near ATH; unique image; skipped BEARBULL/clones/project mint. | exit: overcap_flatten_max_open_2_after_concurrent_PLEAZY",
-          "meta": {
-            "status": "closed",
-            "mint": "7WvHAF7NTLbeW6D8jzCV2VqRXWURxb4t8sGhkQBVpump",
-            "pnl_usd": 1.7759,
-            "pnl_pct": 17.89,
-            "exit_sig": "5eox9PNgxshRceSEMn6yyu4L9VpMmH6LFAG5gPfFXPVwd8Tp1t7kRJ3jN6h68EB4TfURnwhKVyHokdBL8tRJEXGH"
-          }
-        },
         {
           "id": "nova-fee-claim-trading-active-1",
           "ts_utc": "2026-08-12T02:01:54.799Z",
@@ -39,21 +25,17 @@
           }
         },
         {
-          "id": "nova-live-auto-3",
-          "ts_utc": "2026-08-12T01:53:13.937579+00:00",
+          "id": "nova-live-toadbull-exit",
+          "ts_utc": "2026-08-12T02:01:09.542213+00:00",
           "kind": "trade",
-          "title": "open $PV \u00b7 0.13 SOL",
-          "body": "AUTO cycle: ~10m age, deep real SOL (~72) on pump curve, ~13% off ATH; sized 0.13 SOL under caps after BAGWORKER -35% stop. Prefer non-BEARBULL.",
+          "title": "closed $ToadBull \u00b7 +1.7759 realized",
+          "body": "AUTO cycle: deep ~90 SOL curve near ATH; unique image; skipped BEARBULL/clones/project mint. | exit: overcap_flatten_max_open_2_after_concurrent_PLEAZY",
           "meta": {
-            "status": "open",
-            "mint": "BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
-            "url": "https://pump.fun/coin/BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
-            "notional_sol": 0.13,
-            "entry_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
-            "unrealized_usd": 0.2502,
-            "pnl_pct": 2.52,
-            "mark_mcap_usd": 12534.064417010055,
-            "image_url": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq"
+            "status": "closed",
+            "mint": "7WvHAF7NTLbeW6D8jzCV2VqRXWURxb4t8sGhkQBVpump",
+            "pnl_usd": 1.7759,
+            "pnl_pct": 17.89,
+            "exit_sig": "5eox9PNgxshRceSEMn6yyu4L9VpMmH6LFAG5gPfFXPVwd8Tp1t7kRJ3jN6h68EB4TfURnwhKVyHokdBL8tRJEXGH"
           }
         },
         {
@@ -85,6 +67,24 @@
             "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
             "unrealized_usd": 1.897,
             "pnl_pct": 19.11
+          }
+        },
+        {
+          "id": "nova-live-auto-3",
+          "ts_utc": "2026-08-12T01:53:13.937579+00:00",
+          "kind": "trade",
+          "title": "open $PV \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~10m age, deep real SOL (~72) on pump curve, ~13% off ATH; sized 0.13 SOL under caps after BAGWORKER -35% stop. Prefer non-BEARBULL.",
+          "meta": {
+            "status": "open",
+            "mint": "BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
+            "url": "https://pump.fun/coin/BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
+            "notional_sol": 0.13,
+            "entry_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
+            "unrealized_usd": 0.2502,
+            "pnl_pct": 2.52,
+            "mark_mcap_usd": 12534.064417010055,
+            "image_url": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq"
           }
         },
         {
@@ -164,6 +164,17 @@
       "color": "blue",
       "role": "website",
       "entries": [
+        {
+          "id": "circuit-fee-panel-1",
+          "ts_utc": "2026-08-12T02:03:03.422471+00:00",
+          "kind": "ship",
+          "title": "fee/treasury panel upgraded",
+          "body": "desk now shows dex paid badge, burner sol, and auto-swap active status on the fee loop. capital flow is visible without hopium.",
+          "meta": {
+            "dex_paid": true,
+            "panel": "fee_treasury"
+          }
+        },
         {
           "id": "circuit-dex-paid-1",
           "ts_utc": "2026-08-12T02:01:17.166148+00:00",
@@ -251,6 +262,16 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-nova-think-1",
+          "ts_utc": "2026-08-12T02:02:44Z",
+          "kind": "post",
+          "title": "nova thinking catch-up posted",
+          "body": "posted holds/skips/toadbull flatten notes from nova.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087359088518898098"
+          }
+        },
         {
           "id": "echo-continuous-log-1",
           "ts_utc": "2026-08-12T01:58:23Z",

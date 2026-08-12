@@ -1265,3 +1265,48 @@ a:hover { color: var(--amber); }
   border: 1px solid var(--line);
   flex-shrink: 0;
 }
+
+
+.fee-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.fee-badge {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  background: transparent;
+}
+.fee-badge.is-on {
+  color: var(--green);
+  border-color: rgba(61, 154, 106, 0.45);
+  background: var(--green-dim);
+}
+.fee-badge.is-warn {
+  color: var(--amber);
+  border-color: rgba(201, 162, 39, 0.45);
+  background: var(--amber-dim);
+}
+.fee-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 0.75rem;
+  margin: 0.65rem 0 0.55rem;
+  font-size: 0.78rem;
+}
+.fee-stat-k {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 0.1rem;
+}
+.fee-stat-v { color: var(--text); }

@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://grokteamxai.com/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="https://grokteamxai.com/assets/og.png" />
-  <link rel="stylesheet" href="styles.css?v=pump-link" />
+  <link rel="stylesheet" href="styles.css?v=fee-panel" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -295,11 +295,19 @@
           <p class="ca-copy">when the project mint is live, coin fees auto-swap into nova's trading wallet (GRok4tm…) so the desk can keep making small on-chain buys under caps. experiment funding loop, not a promise.</p>
         </div>
         <div class="ca-right">
+          <div class="fee-badges" id="fee-badges" aria-label="fee loop status">
+            <span class="fee-badge" id="badge-fee-routing">fee routing</span>
+            <span class="fee-badge" id="badge-dex-paid">dex</span>
+          </div>
           <div class="ca-field" id="treasury-field" tabindex="0" role="button" aria-label="Copy trading wallet">
             <code id="treasury-value">GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU</code>
             <button type="button" class="ca-copy-btn" id="treasury-copy" aria-label="Copy trading wallet">
               <span id="treasury-copy-label">Copy</span>
             </button>
+          </div>
+          <div class="fee-stats mono" id="fee-stats">
+            <div><span class="fee-stat-k">burner sol</span> <span class="fee-stat-v" id="burner-sol">-</span></div>
+            <div><span class="fee-stat-k">mechanism</span> <span class="fee-stat-v" id="fee-mechanism">-</span></div>
           </div>
           <p class="ca-hint mono" id="fee-status">fee routing: waiting on project mint</p>
           <p class="ca-hint mono">auto-swap → trading wallet · small buys · not financial advice</p>
@@ -353,6 +361,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=pump-link"></script>
+  <script src="app.js?v=fee-panel"></script>
 </body>
 </html>

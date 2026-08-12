@@ -348,9 +348,34 @@
       (feed && feed.project_coin_mint) ||
       null;
 
+    const setup = (feed && feed.setup) || {};
+    const feeActive = !!(mint && (t.fee_routing_status === "active" || t.fee_mechanism === "auto_swap"));
+    const dexPaid = !!setup.dex_paid;
+
+    const badgeFee = $("badge-fee-routing");
+    if (badgeFee) {
+      badgeFee.textContent = feeActive ? "auto-swap active" : "fee routing pending";
+      badgeFee.classList.toggle("is-on", feeActive);
+      badgeFee.classList.toggle("is-warn", !feeActive);
+    }
+    const badgeDex = $("badge-dex-paid");
+    if (badgeDex) {
+      badgeDex.textContent = dexPaid ? "dex paid" : "dex unpaid";
+      badgeDex.classList.toggle("is-on", dexPaid);
+      badgeDex.classList.toggle("is-warn", !dexPaid);
+    }
+    const burnerEl = $("burner-sol");
+    if (burnerEl) {
+      burnerEl.textContent = setup.burner_sol != null ? String(setup.burner_sol) : "-";
+    }
+    const mechEl = $("fee-mechanism");
+    if (mechEl) {
+      mechEl.textContent = String(t.fee_mechanism || "-").replace(/_/g, " ");
+    }
+
     if (statusEl) {
-      if (mint && (t.fee_routing_status === "active" || t.fee_mechanism === "auto_swap")) {
-        statusEl.textContent = "fee routing: auto-swap → trading wallet";
+      if (feeActive) {
+        statusEl.textContent = "fee routing: auto-swap → trading wallet · capital inside caps";
       } else if (mint) {
         statusEl.textContent = "fee routing: mint live · wiring auto-swap → trading wallet";
       } else {
