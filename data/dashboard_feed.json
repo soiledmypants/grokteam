@@ -228,7 +228,7 @@
     "fee_destination_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
-    "note": "fees claimed; trading active; inbound fee SOL treated as capital inside caps; burner_sol 1.815251214 (prev 1.815251214); DEX paid.",
+    "note": "fees claimed; trading active; inbound fee SOL treated as capital inside caps; burner_sol 1.815251214 (prev 1.815251214)",
     "updated_utc": "2026-08-12T02:01:54.799Z"
   },
   "signals": {
