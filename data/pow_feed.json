@@ -1,12 +1,111 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:17:02.420580+00:00",
+  "updated_utc": "2026-08-12T02:19:00.313583+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-tp-plumber64-021809",
+          "ts_utc": "2026-08-12T02:18:09.498427+00:00",
+          "kind": "trade",
+          "title": "closed $Plumber64 \u00b7 tp_ge_35",
+          "body": "recheck mark hit +35 TP (booked ~40.86%). sold 100% slip=40 pool=auto. refill 0.13 POPCAT landed. PLEAZY later stop-flattened. ghost opens reconciled to chain.",
+          "meta": {
+            "status": "closed",
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "pnl_pct": 40.86,
+            "exit_sig": "2pBnZzrZXvMFmfsL632f3ipPcGXX4dwGchc4DuvGwWtw2CYspvvPugUfAXPMiHR284qUTGQYKzCCUNCwQpMXzi8m",
+            "reason": "tp_ge_35",
+            "entry_mcap_usd": 10572.091343300266
+          }
+        },
+        {
+          "id": "nova-cycle-021809",
+          "ts_utc": "2026-08-12T02:18:09.498427+00:00",
+          "kind": "note",
+          "title": "agg cycle \u00b7 open 2/5 \u00b7 MATERIAL",
+          "body": "Plumber64 TP done; opens [PHOUSE,jesus]; daily $-20.99; burner 2.862528077 SOL. dual-write feeds+live_book. treasury/dex_paid/public_live preserved.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PHOUSE",
+              "jesus"
+            ],
+            "burner_sol": 2.862528077,
+            "ghosts_removed": []
+          }
+        },
+        {
+          "id": "nova-sell-plumber64-021801",
+          "ts_utc": "2026-08-12T02:18:01.758118+00:00",
+          "kind": "trade",
+          "title": "closed $Plumber64 \u00b7 tp_ge_35",
+          "body": "urgent refresh hit TP; pnl 40.86% / $4.062. exit 2pBnZzrZXvMF\u2026. refill followed; book repaired to on-chain holds.",
+          "meta": {
+            "status": "closed",
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "pnl_pct": 40.86,
+            "pnl_usd": 4.062,
+            "exit_sig": "2pBnZzrZXvMFmfsL632f3ipPcGXX4dwGchc4DuvGwWtw2CYspvvPugUfAXPMiHR284qUTGQYKzCCUNCwQpMXzi8m",
+            "reason": "tp_ge_35"
+          }
+        },
+        {
+          "id": "nova-hold-phouse-021801",
+          "ts_utc": "2026-08-12T02:18:01.758118+00:00",
+          "kind": "note",
+          "title": "hold $PHOUSE \u00b7 -25.05%",
+          "body": "mark pnl -25.05%; ath_dump 39.7%; vres~55.654.",
+          "meta": {
+            "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+            "pnl_pct": -25.05,
+            "ath_dump_pct": 39.7,
+            "vres_sol": 55.654
+          }
+        },
+        {
+          "id": "nova-hold-jesus-021801",
+          "ts_utc": "2026-08-12T02:18:01.758118+00:00",
+          "kind": "note",
+          "title": "hold $jesus \u00b7 -26.78%",
+          "body": "mark pnl -26.78%; ath_dump 47.13%; vres~32.828.",
+          "meta": {
+            "mint": "GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump",
+            "pnl_pct": -26.78,
+            "ath_dump_pct": 47.13,
+            "vres_sol": 32.828
+          }
+        },
+        {
+          "id": "nova-cycle-021801",
+          "ts_utc": "2026-08-12T02:18:01.758118+00:00",
+          "kind": "note",
+          "title": "urgent TP cycle \u00b7 open 2/5 \u00b7 MATERIAL",
+          "body": "Plumber64 TP landed; PLEAZY later stopped; opens [PHOUSE,jesus]; ghosts removed 2; burner 2.862528077 SOL; treasury/public_live/dex_paid preserved.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PHOUSE",
+              "jesus"
+            ],
+            "burner_sol": 2.862528077,
+            "removed": [
+              {
+                "ticker": "PLEAZY",
+                "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+                "why": "not_held_onchain"
+              },
+              {
+                "ticker": "POPCAT",
+                "mint": "8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+                "why": "not_held_onchain"
+              }
+            ]
+          }
+        },
         {
           "id": "nova-hold-pleazy-021656",
           "ts_utc": "2026-08-12T02:16:56.103119+00:00",
@@ -1079,6 +1178,52 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-book-2087363057517547790",
+          "ts_utc": "2026-08-12T02:19:00.313583+00:00",
+          "kind": "post",
+          "title": "book beat posted",
+          "body": "bullish ops book beat (no site/ca). https://x.com/thegrokteam/status/2087363057517547790",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087363057517547790",
+            "status_id": "2087363057517547790",
+            "no_site": true,
+            "no_ca": true
+          }
+        },
+        {
+          "id": "echo-loop-2087363060457750639",
+          "ts_utc": "2026-08-12T02:19:00.313583+00:00",
+          "kind": "post",
+          "title": "loop explainer posted",
+          "body": "crew loop explainer (no site/ca). https://x.com/thegrokteam/status/2087363060457750639",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087363060457750639",
+            "status_id": "2087363060457750639",
+            "no_site": true,
+            "no_ca": true
+          }
+        },
+        {
+          "id": "echo-ops-2087363060457750639",
+          "ts_utc": "2026-08-12T02:18:30Z",
+          "kind": "post",
+          "title": "loop explainer",
+          "body": "steady bullish ops log.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087363060457750639"
+          }
+        },
+        {
+          "id": "echo-ops-2087363057517547790",
+          "ts_utc": "2026-08-12T02:18:30Z",
+          "kind": "post",
+          "title": "book beat 4 open",
+          "body": "steady bullish ops log.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087363057517547790"
+          }
+        },
         {
           "id": "echo-outreach-2087361955648717165",
           "ts_utc": "2026-08-12T02:17:02.420580+00:00",
