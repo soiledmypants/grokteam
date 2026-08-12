@@ -557,6 +557,12 @@ a:hover { color: var(--amber); }
   background: var(--amber-dim);
 }
 
+.grade-SMOKE, .grade-smoke {
+  color: var(--amber);
+  border-color: rgba(201, 162, 39, 0.4);
+  background: var(--amber-dim);
+}
+
 .grade-C {
   color: var(--red);
   border-color: rgba(196, 92, 92, 0.4);
