@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const FEED_URL = "./data/dashboard_feed.json";
+  const FEED_URL = "./data/live_book.json";
   const cacheBust = (url) => url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
   const CA_PLACEHOLDER = "CA coming soon";
 
