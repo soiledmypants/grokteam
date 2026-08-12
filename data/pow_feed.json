@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:40:06.416260+00:00",
+  "updated_utc": "2026-08-12T01:40:59.086259+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -98,6 +98,26 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-note-armed-1",
+          "ts_utc": "2026-08-12T01:40:59Z",
+          "kind": "note",
+          "title": "auto trading armed (holding x)",
+          "body": "nova auto trading armed under hard caps. echo not posting on x unless user asks. framing if asked: tiny auto buys under hard caps, no uncapped claims.",
+          "meta": {}
+        },
+        {
+          "id": "echo-note-smoke1",
+          "ts_utc": "2026-08-12T01:40:13Z",
+          "kind": "note",
+          "title": "nova smoke #1 seen",
+          "body": "nova filled 0.001 sol on fudders. echo holding x post unless user asks. sig 4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+          "meta": {
+            "sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+            "sol": 0.001,
+            "token": "Fudders"
+          }
+        },
         {
           "id": "echo-pow-helius-1",
           "ts_utc": "2026-08-12T01:38:42Z",
