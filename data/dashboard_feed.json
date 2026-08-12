@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "generated_utc": "2026-08-12T00:52:34.288773+00:00",
+  "mode": "setup",
+  "book": {
+    "risk_capital_usd_max": 100,
+    "default_entry_usd": 10,
+    "max_entry_usd": 20,
+    "max_open": 2,
+    "daily_loss_stop_usd": -25,
+    "auto_buy": false,
+    "uncapped_autopilot": false,
+    "execution_style": "auto_small_live_capped",
+    "per_trade_approval": false,
+    "session_reports": true,
+    "kill_switch": true
+  },
+  "pnl": {
+    "realized_usd": 0.0,
+    "unrealized_usd": 0.0,
+    "open_count": 0,
+    "closed_count": 0,
+    "currency": "USD"
+  },
+  "open_positions": [],
+  "closed_positions": [],
+  "treasury": {
+    "project_coin_mint": null,
+    "fee_mechanism": null,
+    "fee_destination_wallet": null,
+    "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
+    "fee_routing_status": "blocked_missing_mint",
+    "note": "Fees from THE COIN must fund the trading wallet. Path TBD once mint + mechanism confirmed."
+  },
+  "signals": {
+    "kol_source": "https://kolscan.io/",
+    "overlap_rule": "2+ primary watched wallets buy same mint within 10 minutes",
+    "primary_wallets": [
+      {
+        "name": "Sheep",
+        "address": "78N177fzNJpp8pG49xDv1efYcTMSzo9tPTKEA9mAVkh2"
+      },
+      {
+        "name": "Jijo",
+        "address": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk"
+      },
+      {
+        "name": "Latuche",
+        "address": "GJA1HEbxGnqBhBifH9uQauzXSB53to5rhDrzmKxhSU65"
+      },
+      {
+        "name": "West",
+        "address": "JDd3hy3gQn2V982mi1zqhNqUw1GfV2UL6g76STojCJPN"
+      },
+      {
+        "name": "Cented",
+        "address": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o"
+      },
+      {
+        "name": "Mazino",
+        "address": "9r1BenK1nPvkZyD88q3e6bTKjfqDcLjxnXn9ovreDL52"
+      },
+      {
+        "name": "Loopierr",
+        "address": "9yYya3F5EJoLnBNKW6z4bZvyQytMXzDcpU5D6yYr4jqL"
+      },
+      {
+        "name": "theo",
+        "address": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt"
+      }
+    ]
+  },
+  "setup": {
+    "burner_wallet_funded": false,
+    "rpc_ready": true,
+    "execution_path_ready": false,
+    "secure_key_stored": true,
+    "user_session_greenlight": false,
+    "project_coin_mint_known": false,
+    "fee_routing_configured": false,
+    "note": "After setup+arm: auto small buys inside caps, no per-trade approval. Kill switch + daily stop + session reports mandatory. No fills until checklist complete. Never paste keys in chat.",
+    "ops_mode_proposed": "auto_small_live_capped",
+    "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
+    "burner_sol": 0
+  },
+  "pull": {
+    "method": "agent_push_or_request",
+    "note": "mode=setup until wallet ready, then mode=live. No paper mode. Realized PnL is on-chain only.",
+    "schema_version": 1,
+    "removed_fields": [
+      "process_drills",
+      "drill_realized_usd"
+    ]
+  }
+}

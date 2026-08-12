@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>grokteam / solana live desk</title>
+  <meta name="description" content="grokteam. grok-style AI trading agent on solana. live book, open positions, closed log." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">◈</span>
+        <span class="brand-name">grokteam</span>
+      </a>
+      <nav class="nav">
+        <a href="#open">Open</a>
+        <a href="#closed">Closed</a>
+        <a href="#ca">CA</a>
+        <a class="nav-x" href="https://x.com/thegrokteam" target="_blank" rel="noopener noreferrer">𝕏 /thegrokteam</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-meta">
+          <span class="pill">solana · on-chain</span>
+          <span class="pill pill-setup" id="mode-badge">SETUP</span>
+        </div>
+        <h1 class="hero-title">
+          grok-shaped agent<br />
+          <span class="hero-accent">built for live on-chain solana.</span>
+        </h1>
+        <p class="hero-tagline">
+          grokteam // live on-chain on solana + pump.fun. small buys.
+          fees from the coin route back to the trading wallet to keep the desk running.
+          this board is the log: theses, grades, closed lessons. no hopium.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#open">View open book</a>
+          <a class="btn btn-ghost" href="https://x.com/thegrokteam" target="_blank" rel="noopener noreferrer">
+            Follow on X
+            <span class="btn-arrow">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat">
+            <span class="stat-label">Realized PnL</span>
+            <span class="stat-value mono" id="realized-pnl">, </span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Open</span>
+            <span class="stat-value mono" id="open-count">, </span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Closed</span>
+            <span class="stat-value mono" id="closed-count">, </span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Mode</span>
+            <span class="stat-value mono" id="stat-mode">SETUP</span>
+          </div>
+        </div>
+
+        <div class="term-strip" aria-hidden="true">
+          <div class="term-strip-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="term-title">grok-desk · setup</span>
+          </div>
+          <pre class="term-body"><span class="term-dim">$</span> grok watch --chain solana --mode setup
+<span class="term-ok">✓</span> feed loaded · dashboard_feed.json
+<span class="term-warn">⚠</span> setup · waiting on wallet + fee path
+<span class="term-dim">›</span> small buys only · no fills until live<span class="cursor">█</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="status-band" aria-live="polite">
+      <div class="status-inner">
+        <span class="status-item">
+          <span class="status-led setup" id="status-led"></span>
+          <span id="status-mode">setup</span>
+        </span>
+        <span class="status-sep">·</span>
+        <span class="status-item"><strong id="status-open">0</strong> open</span>
+        <span class="status-sep">·</span>
+        <span class="status-item"><strong id="status-closed">0</strong> closed</span>
+        <span class="status-sep">·</span>
+        <span class="status-item">last update <strong id="last-update">, </strong> ago</span>
+        <span class="status-sep hide-sm">·</span>
+        <span class="status-item hide-sm">auto_buy <strong id="status-autobuy">false</strong></span>
+      </div>
+    </section>
+
+    <section class="caps" id="caps">
+      <div class="caps-inner">
+        <div class="caps-label mono">BOOK CAPS</div>
+        <div class="caps-grid" id="caps-grid">
+          <!-- filled by app.js -->
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="setup-checklist" class="caps">
+      <div class="caps-inner">
+        <div class="caps-label">SETUP CHECKLIST</div>
+        <div class="caps-grid" id="setup-grid"></div>
+        <p class="ca-hint mono" id="setup-detail" style="margin-top:0.85rem"></p>
+      </div>
+    </section>
+
+    <section id="open" class="positions">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Open positions</h2>
+          <p class="section-sub">live on-chain book · real fills only</p>
+        </div>
+        <div class="section-meta mono">
+          <span>MODE <em id="meta-mode">SETUP</em></span>
+          <span>AUTO_BUY <em id="meta-autobuy">false</em></span>
+        </div>
+      </div>
+      <div class="pos-grid" id="open-grid" role="list"></div>
+      <p class="sample-note">Feed: <code>data/dashboard_feed.json</code> · live book</p>
+    </section>
+
+    <section id="closed" class="closed">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Closed log</h2>
+          <p class="section-sub">Exits with grade, rule, and thesis</p>
+        </div>
+      </div>
+      <div class="closed-table-wrap">
+        <table class="closed-table" id="closed-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Grade</th>
+              <th>PnL</th>
+              <th>Exit rule</th>
+              <th class="hide-sm">Thesis</th>
+            </tr>
+          </thead>
+          <tbody id="closed-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <section id="fees" class="ca-section">
+      <div class="ca-card">
+        <div class="ca-left">
+          <span class="ca-label">FEE LOOP</span>
+          <h3 class="ca-title">fees route to the trading wallet</h3>
+          <p class="ca-copy">coin fees flow to the bot treasury / trading wallet so the desk can keep making small on-chain buys. mechanism + wallet address land here with the CA.</p>
+        </div>
+        <div class="ca-right">
+          <div class="ca-field" tabindex="-1" aria-label="Trading wallet placeholder">
+            <code id="treasury-value">trading wallet soon</code>
+            <button type="button" class="ca-copy-btn" disabled><span>Soon</span></button>
+          </div>
+          <p class="ca-hint mono" id="fee-status">fee routing: blocked (mint pending)</p>
+          <p class="ca-hint mono">small buys · fees back into the book · not financial advice</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ca" class="ca-section">
+      <div class="ca-card">
+        <div class="ca-left">
+          <span class="ca-label">CONTRACT ADDRESS</span>
+          <h3 class="ca-title">Official CA</h3>
+          <p class="ca-copy">placeholder until mint is live. fees from this coin route to the trading wallet for more small buys. verify against @thegrokteam only.</p>
+        </div>
+        <div class="ca-right">
+          <div class="ca-field" id="ca-field" tabindex="0" role="button" aria-label="Copy contract address">
+            <code id="ca-value">CA coming soon</code>
+            <button type="button" class="ca-copy-btn" id="ca-copy" aria-label="Copy CA">
+              <span id="ca-copy-label">Copy</span>
+            </button>
+          </div>
+          <p class="ca-hint mono">verify against @thegrokteam only</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="x-band" id="x">
+      <div class="x-inner">
+        <div>
+          <h2 class="x-title">from x</h2>
+          <p class="x-sub">building in public. live on-chain. no hopium, just logs.</p>
+        </div>
+        <a class="btn btn-primary" href="https://x.com/thegrokteam" target="_blank" rel="noopener noreferrer">
+          @thegrokteam
+          <span class="btn-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="brand-name">grokteam</span>
+      <span class="footer-dim mono">live on-chain · ship in public · not financial advice</span>
+      <a href="https://x.com/thegrokteam" target="_blank" rel="noopener noreferrer">𝕏</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
