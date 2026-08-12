@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T02:07:52.167845+00:00",
+  "generated_utc": "2026-08-12T02:10:07.640593+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -25,12 +25,12 @@
   },
   "pnl": {
     "realized_usd": -9.3249,
-    "unrealized_usd": 3.9073,
+    "unrealized_usd": 4.2303,
     "open_count": 2,
     "closed_count": 4,
     "currency": "USD",
-    "unrealized_sol": 0.051149,
-    "sol_usd": 76.39,
+    "unrealized_sol": 0.055334,
+    "sol_usd": 76.45,
     "realized_sol": -0.121948
   },
   "open_positions": [
@@ -45,7 +45,7 @@
       "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
       "url": "https://pump.fun/coin/9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
       "notional_sol": 0.13,
-      "notional_usd": 9.9307,
+      "notional_usd": 9.9385,
       "entry_ts_utc": "2026-08-12T01:57:52.989653+00:00",
       "entry_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
       "solscan": "https://solscan.io/tx/5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
@@ -54,17 +54,17 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 7154.269487432113,
-      "mark_mcap_usd": 7750.642010642904,
+      "mark_mcap_usd": 7752.025047609181,
       "ath_mcap_usd": 9247.253322158875,
-      "ath_dump_pct": 16.18,
-      "pnl_pct": 8.34,
-      "pnl_usd": 0.8278,
-      "pnl_sol": 0.010837,
-      "unrealized_usd": 0.8278,
-      "unrealized_sol": 0.010837,
+      "ath_dump_pct": 16.17,
+      "pnl_pct": 8.36,
+      "pnl_usd": 0.8304,
+      "pnl_sol": 0.010862,
+      "unrealized_usd": 0.8304,
+      "unrealized_sol": 0.010862,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 8.34%; ath_dump 16.18%; hold under TP/stop/time rules",
+      "decision_note": "pnl 8.36%; ath_dump 16.17%; hold under TP/stop/time rules",
       "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
       "image_uri": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
       "vres_sol": 57.115
@@ -80,7 +80,7 @@
       "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
       "url": "https://pump.fun/coin/HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
       "notional_sol": 0.13,
-      "notional_usd": 9.9307,
+      "notional_usd": 9.9385,
       "entry_ts_utc": "2026-08-12T02:06:07.283662+00:00",
       "entry_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
       "solscan": "https://solscan.io/tx/29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
@@ -89,20 +89,20 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 10572.091343300266,
-      "mark_mcap_usd": 13850.450514363378,
-      "ath_mcap_usd": 15267.549178607704,
-      "ath_dump_pct": 9.28,
-      "pnl_pct": 31.01,
-      "pnl_usd": 3.0795,
-      "pnl_sol": 0.040312,
-      "unrealized_usd": 3.0795,
-      "unrealized_sol": 0.040312,
+      "mark_mcap_usd": 14188.687424352192,
+      "ath_mcap_usd": 16690.534504397,
+      "ath_dump_pct": 14.99,
+      "pnl_pct": 34.21,
+      "pnl_usd": 3.3999,
+      "pnl_sol": 0.044472,
+      "unrealized_usd": 3.3999,
+      "unrealized_sol": 0.044472,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "pnl 31.01%; ath_dump 9.28%; hold under TP/stop/time rules",
+      "decision_note": "pnl 34.21%; ath_dump 14.99%; hold under TP/stop/time rules",
       "image_url": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
       "image_uri": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
-      "vres_sol": 74.92
+      "vres_sol": 77.27
     }
   ],
   "closed_positions": [
@@ -274,7 +274,7 @@
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
     "note": "fees claimed; trading active; inbound fee SOL = capital inside caps",
-    "updated_utc": "2026-08-12T02:07:52.167845+00:00"
+    "updated_utc": "2026-08-12T02:10:07.640593+00:00"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -330,7 +330,7 @@
     "helius_ready": true,
     "dex_paid": true,
     "rpc_host": "mainnet.helius-rpc.com",
-    "updated_utc": "2026-08-12T02:07:52.167845+00:00"
+    "updated_utc": "2026-08-12T02:10:07.640593+00:00"
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -342,18 +342,14 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T02:07:52.167845+00:00",
-    "type": "auto_small_live_capped_5m",
-    "pv": "STOP_FLATTEN",
-    "pv_exit_sig": "57cFq4upEfWfaESyrFKyRszvPFm2rAbHNpA6cKR9TJ8r4YqNwevGLGNdp75ANhxupEEmTaFsrs8ZENxdQo9CNhsS",
-    "pleazy": "HOLD",
-    "buy_ticker": "Plumber64",
-    "buy_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
-    "buy_ok": true,
-    "material": true,
+    "ts_utc": "2026-08-12T02:10:07.640593+00:00",
+    "type": "auto_small_live_capped_quick_mark",
     "opens": [
       "PLEAZY",
       "Plumber64"
-    ]
+    ],
+    "material": false,
+    "slot_freed": false,
+    "exits_needed": []
   }
 }
