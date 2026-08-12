@@ -665,21 +665,37 @@
     }
     root.innerHTML = entries
       .map((e) => {
-        const link = e.meta && e.meta.url
-          ? `<a class="pow-link" href="${escapeHtml(e.meta.url)}" target="_blank" rel="noopener noreferrer">open ↗</a>`
+        const kind = (e.kind || "note").toLowerCase();
+        const isOutreach = kind === "outreach";
+        const meta = e.meta || {};
+        const url = meta.url || "";
+        const linkLabel = isOutreach ? "tweet ↗" : "open ↗";
+        const linkCls = isOutreach ? "pow-link pow-link-tweet" : "pow-link";
+        const link = url
+          ? `<a class="${linkCls}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${linkLabel}</a>`
           : "";
-        const thumbSrc = e.meta && (e.meta.image_url || e.meta.image_uri);
+        const thumbSrc = meta.image_url || meta.image_uri;
         const thumb = thumbSrc
           ? `<img class="pow-thumb" src="${escapeHtml(thumbSrc)}" alt="" loading="lazy" />`
           : "";
-        return `<article class="pow-item">
+        const target = meta.target || "";
+        const why = meta.why || "";
+        const outreachMeta = isOutreach && (target || why)
+          ? `<div class="pow-outreach-meta">${
+              target ? `<span>target <strong>${escapeHtml(target)}</strong></span>` : ""
+            }${
+              why ? `<span>why <strong>${escapeHtml(why)}</strong></span>` : ""
+            }</div>`
+          : "";
+        return `<article class="pow-item${isOutreach ? " pow-item-outreach" : ""}">
           <div>
             <div class="pow-time mono">${escapeHtml(relativeAge(e.ts_utc))}</div>
-            <div class="pow-kind">${escapeHtml(e.kind || "note")}</div>
+            <div class="pow-kind${isOutreach ? " pow-kind-outreach" : ""}">${escapeHtml(e.kind || "note")}</div>
           </div>
           <div>
             <div class="pow-title-row">${thumb}<h3 class="pow-title">${escapeHtml(e.title || "")}</h3></div>
             <p class="pow-body">${escapeHtml(cleanCopy(e.body || ""))}</p>
+            ${outreachMeta}
             ${link}
           </div>
         </article>`;
@@ -690,6 +706,7 @@
 
 
   const OPS_LIMIT = 7;
+  const OUTREACH_LIMIT = 5;
 
   function collectOpsEntries(pow) {
     const out = [];
@@ -706,6 +723,7 @@
           kind: e.kind || "note",
           title: e.title || "",
           body: e.body || "",
+          meta: e.meta || {},
         });
       }
     }
@@ -714,11 +732,53 @@
   }
 
   function opsLineText(e) {
+    const kind = String(e.kind || "").toLowerCase();
+    if (kind === "outreach") {
+      const target = cleanCopy((e.meta && e.meta.target) || "").trim();
+      const title = cleanCopy(e.title || "").trim();
+      if (target && title) return title;
+      if (target) return "engaged " + target;
+    }
     const title = cleanCopy(e.title || "").trim();
     if (title) return title;
     const body = cleanCopy(e.body || "").trim();
     if (!body) return "desk beat";
     return body.length > 96 ? body.slice(0, 93) + "..." : body;
+  }
+
+  function renderOutreachLane() {
+    const root = $("ops-outreach");
+    if (!root) return;
+    const items = collectOpsEntries(powCache)
+      .filter((e) => String(e.kind || "").toLowerCase() === "outreach")
+      .slice(0, OUTREACH_LIMIT);
+    if (!items.length) {
+      root.innerHTML = "";
+      root.hidden = true;
+      root.classList.add("is-empty");
+      return;
+    }
+    root.hidden = false;
+    root.classList.remove("is-empty");
+    root.innerHTML =
+      `<div class="ops-outreach-head"><span class="ops-outreach-label">outreach</span></div>` +
+      items
+        .map((e) => {
+          const meta = e.meta || {};
+          const target = escapeHtml(meta.target || e.title || "target");
+          const whyRaw = cleanCopy(meta.why || "").trim() || cleanCopy(e.body || "").trim();
+          const why = escapeHtml(whyRaw.length > 110 ? whyRaw.slice(0, 107) + "..." : whyRaw || "logged");
+          const url = meta.url || "";
+          const link = url
+            ? `<a class="ops-outreach-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">tweet ↗</a>`
+            : `<span class="ops-age">${escapeHtml(relativeAge(e.ts_utc))}</span>`;
+          return `<div class="ops-outreach-item">
+            <span class="ops-outreach-target">${target}</span>
+            <span class="ops-outreach-why">${why}</span>
+            ${link}
+          </div>`;
+        })
+        .join("");
   }
 
   function renderOpsStrip() {
@@ -733,21 +793,29 @@
     }
     if (!entries.length) {
       root.innerHTML = `<div class="ops-fallback">waiting on the next desk beat.</div>`;
+      renderOutreachLane();
       return;
     }
     root.innerHTML = entries
       .map((e) => {
         const tag = escapeHtml(e.agent);
-        const kind = escapeHtml(e.kind || "note");
+        const kindRaw = String(e.kind || "note");
+        const kind = escapeHtml(kindRaw);
+        const isOutreach = kindRaw.toLowerCase() === "outreach";
         const text = escapeHtml(opsLineText(e));
         const age = escapeHtml(relativeAge(e.ts_utc));
-        return `<div class="ops-line" data-agent="${tag}">
+        const url = e.meta && e.meta.url;
+        const link = isOutreach && url
+          ? `<a class="ops-line-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">tweet ↗</a>`
+          : "";
+        return `<div class="ops-line${isOutreach ? " is-outreach" : ""}" data-agent="${tag}">
           <span class="ops-tag ops-tag-${tag}">${tag}</span>
-          <span class="ops-text"><span class="ops-kind">${kind}</span>${text}</span>
+          <span class="ops-text"><span class="ops-kind">${kind}</span>${text}${link}</span>
           <span class="ops-age">${age}</span>
         </div>`;
       })
       .join("");
+    renderOutreachLane();
   }
 
   function wirePowTabs() {
