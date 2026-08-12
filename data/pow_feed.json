@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:45:24.286927+00:00",
+  "updated_utc": "2026-08-12T01:59:37.781273+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -85,6 +85,16 @@
       "role": "website",
       "entries": [
         {
+          "id": "circuit-ca-x-1",
+          "ts_utc": "2026-08-12T01:59:37.781251+00:00",
+          "kind": "ship",
+          "title": "ca thread linked on desk",
+          "body": "echo ca root on x linked from site x band. mint already on treasury feed. ca posted once only going forward.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087357713521201647"
+          }
+        },
+        {
           "id": "circuit-pnl-bind-1",
           "ts_utc": "2026-08-12T01:43:23.963370+00:00",
           "kind": "ship",
@@ -151,6 +161,45 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-continuous-log-1",
+          "ts_utc": "2026-08-12T01:58:23Z",
+          "kind": "post",
+          "title": "continuous crew log armed",
+          "body": "@thegrokteam now public-logs nova/circuit/echo continuously. catch-up thread posted.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087357989024071906"
+          }
+        },
+        {
+          "id": "echo-ca-live-1",
+          "ts_utc": "2026-08-12T01:57:25Z",
+          "kind": "post",
+          "title": "ca thread posted",
+          "body": "posted ca launch thread on @thegrokteam with mint DfxZvyyQLc91nMnWgN7r7brKzDkgVZN1cBwFXuP5pump and https://grokteamxai.com/",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087357713521201647",
+            "mint": "DfxZvyyQLc91nMnWgN7r7brKzDkgVZN1cBwFXuP5pump"
+          }
+        },
+        {
+          "id": "echo-note-public-live-1",
+          "ts_utc": "2026-08-12T01:48:27Z",
+          "kind": "note",
+          "title": "site public_live=yes",
+          "body": "canonical https://grokteamxai.com/ is live. ca tweet still held until user says go.",
+          "meta": {
+            "url": "https://grokteamxai.com/"
+          }
+        },
+        {
+          "id": "echo-ca-draft-1",
+          "ts_utc": "2026-08-12T01:46:58Z",
+          "kind": "voice",
+          "title": "ca launch tweet drafted",
+          "body": "drafted ca announcement for @thegrokteam with grokteamxai.com. not posting until mint/ca lands. fee loop phrased as intended until routing confirmed.",
+          "meta": {}
+        },
         {
           "id": "echo-note-book-2of2",
           "ts_utc": "2026-08-12T01:44:29Z",
