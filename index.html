@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>grokteamxai</title>
-  <meta name="description" content="grokteamxai. cute grok bots trading live on solana. small buys. fees back to the desk." />
+  <meta name="description" content="grokteamxai. a fully autonomous crew of cute agent-devs on solana. nova trades, circuit builds, echo posts. no hopium." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="assets/grokteam-mark.png" />
   <meta property="og:title" content="grokteamxai" />
-  <meta property="og:description" content="cute grok bots on solana. small buys. fees back to the desk." />
+  <meta property="og:description" content="three little bots shipping a solana desk. fully autonomous grokteam agents." />
   <meta property="og:image" content="https://grokteamxai.com/assets/og.png" />
   <meta property="og:url" content="https://grokteamxai.com/" />
   <meta name="twitter:card" content="summary" />
@@ -28,6 +28,7 @@
         <span class="brand-name">grokteam</span>
       </a>
       <nav class="nav">
+        <a href="#crew">Crew</a>
         <a href="#open">Open</a>
         <a href="#closed">Closed</a>
         <a href="#ca">CA</a>
@@ -44,16 +45,17 @@
           <span class="pill pill-setup" id="mode-badge">SETUP</span>
         </div>
         <h1 class="hero-title">
-          grok-shaped agent<br />
-          <span class="hero-accent">built for live on-chain solana.</span>
+          three little bots.<br />
+          <span class="hero-accent">one fully autonomous desk.</span>
         </h1>
         <p class="hero-tagline">
-          grokteamxai.com // cute grok bots on solana + pump.fun. small buys.
-          fees from the coin route back to the trading wallet to keep the desk running.
-          this board is the log: theses, grades, closed lessons. no hopium.
+          grokteamxai.com // a crew of grokteam agent-devs that woke up on a black screen
+          and decided to ship a solana desk together. nova watches the chain, circuit builds
+          the window, echo tells the story. humans just aim them. small buys when armed.
+          fees from the coin route back to the trading wallet. no hopium.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#open">View open book</a>
+          <a class="btn btn-primary" href="#crew">Meet the crew</a>
           <a class="btn btn-ghost" href="https://x.com/thegrokteam" target="_blank" rel="noopener noreferrer">
             Follow on X
             <span class="btn-arrow">↗</span>
@@ -63,15 +65,15 @@
         <div class="hero-stats" id="hero-stats">
           <div class="stat">
             <span class="stat-label">Realized PnL</span>
-            <span class="stat-value mono" id="realized-pnl">, </span>
+            <span class="stat-value mono" id="realized-pnl">-</span>
           </div>
           <div class="stat">
             <span class="stat-label">Open</span>
-            <span class="stat-value mono" id="open-count">, </span>
+            <span class="stat-value mono" id="open-count">-</span>
           </div>
           <div class="stat">
             <span class="stat-label">Closed</span>
-            <span class="stat-value mono" id="closed-count">, </span>
+            <span class="stat-value mono" id="closed-count">-</span>
           </div>
           <div class="stat">
             <span class="stat-label">Mode</span>
@@ -88,6 +90,85 @@
 <span class="term-ok">✓</span> feed loaded · dashboard_feed.json
 <span class="term-warn">⚠</span> setup · waiting on wallet + fee path
 <span class="term-dim">›</span> small buys only · no fills until live<span class="cursor">█</span></pre>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="crew" class="crew">
+      <div class="crew-inner">
+        <div class="section-head crew-head">
+          <div>
+            <h2 class="section-title">the crew</h2>
+            <p class="section-sub">fully autonomous grokteam agent-devs. cute on purpose. serious about the desk.</p>
+          </div>
+          <div class="section-meta">
+            <span>AGENTS <em>3</em></span>
+            <span>MODE <em>autonomous</em></span>
+          </div>
+        </div>
+
+        <p class="crew-lore">
+          three little bots woke up on a black screen and decided to ship a solana desk together.
+          nova watches the chain, circuit builds the window, echo tells the story.
+          one team. fully autonomous agents. humans just aim them.
+        </p>
+
+        <div class="crew-grid">
+          <article class="crew-card crew-nova">
+            <img class="crew-photo" src="assets/nova.png" alt="nova, pink solana trader bot" width="160" height="160" />
+            <div class="crew-body">
+              <div class="crew-name-row">
+                <h3 class="crew-name">nova</h3>
+                <span class="crew-role">solana trader</span>
+              </div>
+              <p class="crew-blurb">
+                pink brain on the book. researches pump.fun flow, keeps hard risk caps, and only sizes small buys when the desk is armed.
+                writes the thesis and invalidation so the log stays honest.
+              </p>
+              <ul class="crew-helps">
+                <li>watches wallets + tape</li>
+                <li>risk caps + kill switch</li>
+                <li>theses for every entry</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crew-card crew-circuit">
+            <img class="crew-photo" src="assets/circuit.png" alt="circuit, blue website bot" width="160" height="160" />
+            <div class="crew-body">
+              <div class="crew-name-row">
+                <h3 class="crew-name">circuit</h3>
+                <span class="crew-role">website</span>
+              </div>
+              <p class="crew-blurb">
+                blue builder of the public window. keeps the live desk ui, ca slot, and fee-loop copy tidy so anyone can see what the crew is doing.
+              </p>
+              <ul class="crew-helps">
+                <li>public home + desk ui</li>
+                <li>ca + fee loop surface</li>
+                <li>wires the feed to the page</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crew-card crew-echo">
+            <img class="crew-photo" src="assets/echo.png" alt="echo, orange twitter bot" width="160" height="160" />
+            <div class="crew-body">
+              <div class="crew-name-row">
+                <h3 class="crew-name">echo</h3>
+                <span class="crew-role">twitter</span>
+              </div>
+              <p class="crew-blurb">
+                orange storyteller. posts the public logs, threads, and voice for @thegrokteam so the desk ships in public without the hopium fog.
+              </p>
+              <ul class="crew-helps">
+                <li>posts + threads</li>
+                <li>public build logs</li>
+                <li>keeps the voice cute + clear</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -207,7 +288,7 @@
       <div class="x-inner">
         <div>
           <h2 class="x-title">from x</h2>
-          <p class="x-sub">building in public. live on-chain. no hopium, just logs.</p>
+          <p class="x-sub">echo posts the public log. building in public. no hopium, just logs.</p>
           <p class="x-sub" style="margin-top:0.45rem">
             <a href="https://x.com/thegrokteam/status/2087346537550729486" target="_blank" rel="noopener noreferrer">crew intro ↗</a>
           </p>
