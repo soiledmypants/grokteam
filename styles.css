@@ -919,12 +919,16 @@ a:hover { color: var(--amber); }
 }
 .crew-card:hover { border-color: #2e2e34; }
 .crew-photo {
-  width: 96px;
-  height: 96px;
-  border-radius: 18px;
-  object-fit: cover;
+  width: 112px;
+  height: 112px;
+  aspect-ratio: 1 / 1;
+  border-radius: 22px;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
   border: 1px solid var(--line);
   background: #000;
+  display: block;
 }
 .crew-name-row {
   display: flex;
@@ -977,5 +981,5 @@ a:hover { color: var(--amber); }
 @media (max-width: 900px) {
   .crew-grid { grid-template-columns: 1fr; }
   .crew-card { flex-direction: row; align-items: flex-start; }
-  .crew-photo { width: 72px; height: 72px; border-radius: 14px; flex-shrink: 0; }
+  .crew-photo { width: 88px; height: 88px; border-radius: 18px; flex-shrink: 0; }
 }
