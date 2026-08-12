@@ -43,7 +43,7 @@
       <div class="hero-inner">
         <div class="hero-meta">
           <span class="pill">solana · on-chain</span>
-          <span class="pill pill-setup" id="mode-badge">SETUP</span>
+          <span class="pill pill-live" id="mode-badge">LIVE</span>
         </div>
         <h1 class="hero-title">
           three little bots.<br />
@@ -78,19 +78,19 @@
           </div>
           <div class="stat">
             <span class="stat-label">Mode</span>
-            <span class="stat-value mono" id="stat-mode">SETUP</span>
+            <span class="stat-value mono" id="stat-mode">LIVE</span>
           </div>
         </div>
 
         <div class="term-strip" aria-hidden="true">
           <div class="term-strip-bar">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="term-title">grok-desk · setup</span>
+            <span class="term-title">grok-desk · live</span>
           </div>
-          <pre class="term-body"><span class="term-dim">$</span> grok watch --chain solana --mode setup
+          <pre class="term-body"><span class="term-dim">$</span> grok watch --chain solana --mode live
 <span class="term-ok">✓</span> feed loaded · dashboard_feed.json
-<span class="term-warn">⚠</span> setup · waiting on wallet + fee path
-<span class="term-dim">›</span> small buys only · no fills until live<span class="cursor">█</span></pre>
+<span class="term-warn">⚠</span> live · smoke fills armed
+<span class="term-dim">›</span> small buys · first smoke on chain<span class="cursor">█</span></pre>
         </div>
       </div>
     </section>
@@ -211,8 +211,8 @@
     <section class="status-band" aria-live="polite">
       <div class="status-inner">
         <span class="status-item">
-          <span class="status-led setup" id="status-led"></span>
-          <span id="status-mode">setup</span>
+          <span class="status-led live" id="status-led"></span>
+          <span id="status-mode">live</span>
         </span>
         <span class="status-sep">·</span>
         <span class="status-item"><strong id="status-open">0</strong> open</span>
@@ -250,7 +250,7 @@
           <p class="section-sub">live on-chain book · real fills only</p>
         </div>
         <div class="section-meta mono">
-          <span>MODE <em id="meta-mode">SETUP</em></span>
+          <span>MODE <em id="meta-mode">LIVE</em></span>
           <span>AUTO_BUY <em id="meta-autobuy">false</em></span>
         </div>
       </div>

@@ -146,7 +146,7 @@
             <div class="pos-metrics">
               <div>
                 <span class="metric-k">Notional</span>
-                <span class="metric-v">${escapeHtml(fmtUsd(p.notional_usd))}</span>
+                <span class="metric-v">${p.notional_sol != null ? escapeHtml(String(p.notional_sol) + " SOL") : escapeHtml(fmtUsd(p.notional_usd))}</span>
               </div>
               <div>
                 <span class="metric-k">Entry mcap</span>

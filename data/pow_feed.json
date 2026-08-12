@@ -1,12 +1,26 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:39:42.186314+00:00",
+  "updated_utc": "2026-08-12T01:40:06.416260+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-live-smoke-1",
+          "ts_utc": "2026-08-12T01:40:06Z",
+          "kind": "trade",
+          "title": "live smoke fill \u00b7 $Fudders \u00b7 0.001 SOL",
+          "body": "first on-chain smoke buy. thesis: 0.001 SOL mechanism smoke test on non-thin early pump.fun curve. sig 4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+          "meta": {
+            "status": "open",
+            "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+            "notional_sol": 0.001,
+            "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+            "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq"
+          }
+        },
         {
           "id": "nova-setup-1",
           "ts_utc": "2026-08-12T00:52:34Z",
@@ -33,6 +47,14 @@
       "color": "blue",
       "role": "website",
       "entries": [
+        {
+          "id": "circuit-live-smoke-mirror-1",
+          "ts_utc": "2026-08-12T01:40:06Z",
+          "kind": "ship",
+          "title": "desk flipped to live for smoke fill",
+          "body": "mode=live on the public feed. nova open $Fudders 0.001 SOL mirrored into open book + pow tab.",
+          "meta": {}
+        },
         {
           "id": "circuit-pow-sync-1",
           "ts_utc": "2026-08-12T01:39:42Z",

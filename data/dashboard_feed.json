@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T00:52:34.288773+00:00",
-  "mode": "setup",
+  "generated_utc": "2026-08-12T01:40:06.416260+00:00",
+  "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
     "default_entry_usd": 10,
@@ -17,12 +17,36 @@
   },
   "pnl": {
     "realized_usd": 0.0,
-    "unrealized_usd": 0.0,
-    "open_count": 0,
+    "unrealized_usd": null,
+    "open_count": 1,
     "closed_count": 0,
     "currency": "USD"
   },
-  "open_positions": [],
+  "open_positions": [
+    {
+      "id": "live-smoke-1",
+      "status": "open",
+      "mode": "live",
+      "ticker": "Fudders",
+      "name": "Fudders",
+      "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+      "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+      "notional_usd": null,
+      "notional_sol": 0.001,
+      "entry_ts_utc": "2026-08-12T01:40:06.416260+00:00",
+      "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+      "entry_mcap_usd": null,
+      "curve_pct_at_entry": null,
+      "thesis": "0.001 SOL mechanism smoke test on non-thin early pump.fun curve",
+      "invalidation": "mechanism failure / cannot exit / curve dies",
+      "setup_grade": "smoke",
+      "agent": "nova",
+      "pnl_usd": null,
+      "pnl_pct": null,
+      "mark_mcap_usd": null,
+      "updated_utc": "2026-08-12T01:40:06.416260+00:00"
+    }
+  ],
   "closed_positions": [],
   "treasury": {
     "project_coin_mint": null,
@@ -78,7 +102,7 @@
     "user_session_greenlight": false,
     "project_coin_mint_known": false,
     "fee_routing_configured": false,
-    "note": "After setup+arm: auto small buys inside caps, no per-trade approval. Kill switch + daily stop + session reports mandatory. No fills until checklist complete. Never paste keys in chat.",
+    "note": "First 0.001 SOL smoke fill live. Full arming/risk path still per crew rules.",
     "ops_mode_proposed": "auto_small_live_capped",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "burner_sol": 0
