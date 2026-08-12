@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:49:00Z",
+  "generated_utc": "2026-08-12T01:53:13.937579+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -23,26 +23,62 @@
     "max_entry_sol": 0.26
   },
   "pnl": {
-    "realized_usd": 0.0129,
-    "unrealized_usd": -1.091,
+    "realized_usd": -7.3888,
+    "unrealized_usd": 0.0,
     "open_count": 1,
-    "closed_count": 1,
+    "closed_count": 2,
     "currency": "USD",
-    "unrealized_sol": -0.014291,
-    "sol_usd": 76.38,
-    "realized_sol": 0.000168
+    "unrealized_sol": 0.0,
+    "sol_usd": 76.47,
+    "realized_sol": -0.096625
   },
   "open_positions": [
     {
-      "id": "live-auto-2",
+      "id": "live-auto-3",
       "status": "open",
+      "mode": "live",
+      "ticker": "PV",
+      "name": "PlumberVille",
+      "symbol": "PV",
+      "description": "PlumberVille",
+      "mint": "BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
+      "url": "https://pump.fun/coin/BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9411,
+      "entry_ts_utc": "2026-08-12T01:53:13.937579+00:00",
+      "entry_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
+      "solscan": "https://solscan.io/tx/29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
+      "thesis": "AUTO cycle: ~10m age, deep real SOL (~72) on pump curve, ~13% off ATH; sized 0.13 SOL under caps after BAGWORKER -35% stop. Prefer non-BEARBULL.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 12225.912187747588,
+      "mark_mcap_usd": 12225.912187747588,
+      "ath_mcap_usd": 14013.633105644933,
+      "ath_dump_pct": 12.76,
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "pnl_sol": 0.0,
+      "unrealized_usd": 0.0,
+      "unrealized_sol": 0.0,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "fresh entry this cycle",
+      "image_url": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq",
+      "image_uri": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq"
+    }
+  ],
+  "closed_positions": [
+    {
+      "id": "live-auto-2",
+      "status": "closed",
       "mode": "live",
       "ticker": "BAGWORKER",
       "name": "Bag Worker",
       "mint": "2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
       "url": "https://pump.fun/coin/2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
       "notional_sol": 0.13,
-      "notional_usd": 9.9242,
+      "notional_usd": 9.9411,
       "entry_ts_utc": "2026-08-12T01:42:19.610301+00:00",
       "entry_sig": "6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z",
       "solscan": "https://solscan.io/tx/6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z",
@@ -50,25 +86,31 @@
       "invalidation": ">40% ATH dump, thin curve, or hard rug; no average down",
       "setup_grade": "B+",
       "agent": "nova",
-      "pnl_usd": -1.091,
-      "pnl_pct": -10.99,
+      "pnl_usd": -7.4017,
+      "pnl_pct": -74.46,
       "entry_mcap_usd": 21965.5504563218,
-      "mark_mcap_usd": 19550.85777929028,
-      "pnl_sol": -0.014291,
-      "unrealized_usd": -1.091,
-      "unrealized_sol": -0.014291,
+      "mark_mcap_usd": 5610.8965937427165,
+      "pnl_sol": -0.096793,
+      "unrealized_usd": 0.0,
+      "unrealized_sol": 0.0,
       "ath_mcap_usd": 32201.16097917802,
-      "ath_dump_pct": 37.83,
+      "ath_dump_pct": 82.58,
       "complete": true,
-      "decision": "HOLD",
-      "decision_note": "pnl -8.86% (need +35 TP / -35 stop); ath_dump 37.83% (<40 or reserves not collapsing \u2014 graduated pumpswap); age ~2m (<45m time-stop)",
+      "decision": "STOP_FLATTEN",
+      "decision_note": "pnl -74.46% <= -35 stop; ath_dump 82.58%; sold 100% pool=auto slip=40",
       "image_url": "https://ipfs.io/ipfs/bafybeiftufqstvgefbsw4lmpihg525hg72xgiuubecux2mfhd3uw7eja3i",
       "image_uri": "https://ipfs.io/ipfs/bafybeiftufqstvgefbsw4lmpihg525hg72xgiuubecux2mfhd3uw7eja3i",
       "symbol": "BAGWORKER",
-      "description": "Bag Worker"
-    }
-  ],
-  "closed_positions": [
+      "description": "Bag Worker",
+      "exit_sig": "3Kiw9DXXPVhYmQry28Bhx2dtBaEXKm3ymDHCb1CpLEtzKWkD3ufD8dNkTBiGdrREqZqscQ2TRWFV2jmR2ebMnPtZ",
+      "exit_ts_utc": "2026-08-12T01:53:13.937579+00:00",
+      "exit_reason": "stop_flatten_pnl_le_neg35",
+      "solscan_exit": "https://solscan.io/tx/3Kiw9DXXPVhYmQry28Bhx2dtBaEXKm3ymDHCb1CpLEtzKWkD3ufD8dNkTBiGdrREqZqscQ2TRWFV2jmR2ebMnPtZ",
+      "realized_usd": -7.4017,
+      "realized_sol": -0.096793,
+      "realized_pnl_usd": -7.4017,
+      "realized_pnl_sol": -0.096793
+    },
     {
       "id": "live-smoke-1",
       "status": "closed",
@@ -161,7 +203,7 @@
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 0.509144888,
+    "burner_sol": 0.536254792,
     "helius_ready": true
   },
   "pull": {
@@ -174,12 +216,13 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T01:44:25.105402+00:00",
-    "type": "manage",
-    "fudders": "flattened_100pct",
-    "fudders_exit_sig": "6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR",
-    "bagworker": "HOLD",
-    "bagworker_pnl_pct": -8.86,
-    "bagworker_ath_dump_pct": 37.83
+    "ts_utc": "2026-08-12T01:53:13.937579+00:00",
+    "type": "auto_small_live_capped_recovery",
+    "bagworker": "STOP_FLATTEN",
+    "bagworker_exit_sig": "3Kiw9DXXPVhYmQry28Bhx2dtBaEXKm3ymDHCb1CpLEtzKWkD3ufD8dNkTBiGdrREqZqscQ2TRWFV2jmR2ebMnPtZ",
+    "bagworker_pnl_pct": -74.46,
+    "buy_ticker": "PV",
+    "buy_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
+    "buy_ok": true
   }
 }
