@@ -359,6 +359,16 @@
       }
     }
 
+    const pumpLink = $("ca-pump-link");
+    if (pumpLink) {
+      if (mint) {
+        pumpLink.href = "https://pump.fun/coin/" + mint;
+        pumpLink.style.display = "";
+      } else {
+        pumpLink.style.display = "none";
+      }
+    }
+
     if (caEl) {
       if (mint) {
         caEl.textContent = mint;
