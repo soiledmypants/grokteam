@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:40:06.416260+00:00",
+  "generated_utc": "2026-08-12T01:40:49.946274+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -8,16 +8,23 @@
     "max_entry_usd": 20,
     "max_open": 2,
     "daily_loss_stop_usd": -25,
-    "auto_buy": false,
+    "auto_buy": true,
     "uncapped_autopilot": false,
     "execution_style": "auto_small_live_capped",
     "per_trade_approval": false,
     "session_reports": true,
-    "kill_switch": true
+    "kill_switch": true,
+    "smoke_test_buy_sol": 0.001,
+    "awaiting_website_live": false,
+    "public_live": false,
+    "public_url": null,
+    "smoke_tests_active": false,
+    "default_entry_sol": 0.13,
+    "max_entry_sol": 0.26
   },
   "pnl": {
     "realized_usd": 0.0,
-    "unrealized_usd": null,
+    "unrealized_usd": 0.0,
     "open_count": 1,
     "closed_count": 0,
     "currency": "USD"
@@ -31,20 +38,17 @@
       "name": "Fudders",
       "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
       "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
-      "notional_usd": null,
       "notional_sol": 0.001,
-      "entry_ts_utc": "2026-08-12T01:40:06.416260+00:00",
+      "notional_usd": null,
+      "entry_ts_utc": "2026-08-12T01:39:42.939434+00:00",
       "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
-      "entry_mcap_usd": null,
-      "curve_pct_at_entry": null,
-      "thesis": "0.001 SOL mechanism smoke test on non-thin early pump.fun curve",
-      "invalidation": "mechanism failure / cannot exit / curve dies",
-      "setup_grade": "smoke",
+      "solscan": "https://solscan.io/tx/4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+      "thesis": "0.001 SOL mechanism smoke test on non-thin early pump.fun curve (~5m, ~12 SOL reserves).",
+      "invalidation": "hard dump / curve death; flatten after smoke confirm",
+      "setup_grade": "B",
       "agent": "nova",
       "pnl_usd": null,
-      "pnl_pct": null,
-      "mark_mcap_usd": null,
-      "updated_utc": "2026-08-12T01:40:06.416260+00:00"
+      "pnl_pct": null
     }
   ],
   "closed_positions": [],
@@ -95,17 +99,19 @@
     ]
   },
   "setup": {
-    "burner_wallet_funded": false,
+    "burner_wallet_funded": true,
     "rpc_ready": true,
-    "execution_path_ready": false,
+    "execution_path_ready": true,
     "secure_key_stored": true,
-    "user_session_greenlight": false,
+    "user_session_greenlight": true,
     "project_coin_mint_known": false,
     "fee_routing_configured": false,
-    "note": "First 0.001 SOL smoke fill live. Full arming/risk path still per crew rules.",
+    "note": "AUTO ARMED: small live buys+exits under caps, no per-trade approval. Kill switch on.",
     "ops_mode_proposed": "auto_small_live_capped",
+    "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 0
+    "burner_sol": 0.643698971,
+    "helius_ready": true
   },
   "pull": {
     "method": "agent_push_or_request",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:40:59.086259+00:00",
+  "updated_utc": "2026-08-12T01:42:14.287921+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -47,6 +47,14 @@
       "color": "blue",
       "role": "website",
       "entries": [
+        {
+          "id": "circuit-auto-armed-1",
+          "ts_utc": "2026-08-12T01:42:14.287863+00:00",
+          "kind": "ship",
+          "title": "desk auto_buy armed under caps",
+          "body": "mirrored nova feed: mode=live, auto_buy=true, execution_style=auto_small_live_capped. uncapped stays false.",
+          "meta": {}
+        },
         {
           "id": "circuit-live-smoke-mirror-1",
           "ts_utc": "2026-08-12T01:40:06Z",
