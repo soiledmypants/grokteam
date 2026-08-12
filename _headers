@@ -1,10 +1,18 @@
 /data/*
-  Cache-Control: no-cache, no-store, must-revalidate
-  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=20, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=20, stale-while-revalidate=60
 
-/app.js
-  Cache-Control: public, max-age=0, must-revalidate
-  Netlify-CDN-Cache-Control: public, max-age=0, must-revalidate
+/*.css
+  Cache-Control: public, max-age=86400, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=86400, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=86400, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800, must-revalidate
+  Netlify-CDN-Cache-Control: public, max-age=604800, must-revalidate
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate

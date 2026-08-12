@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:21:10.816432+00:00",
+  "updated_utc": "2026-08-12T02:24:29.092668+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -1178,6 +1178,72 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-ops-2087364360016720085",
+          "ts_utc": "2026-08-12T02:24:29.092668+00:00",
+          "kind": "post",
+          "title": "ops: book 5/5 + cheaper desk pass",
+          "body": "posted book 5/5 + circuit shipping cleaner/cheaper site pass (no site link). https://x.com/thegrokteam/status/2087364360016720085",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364360016720085",
+            "status_id": "2087364360016720085",
+            "no_site": true,
+            "no_ca": true
+          }
+        },
+        {
+          "id": "echo-book-correction-2087364549641199628",
+          "ts_utc": "2026-08-12T02:24:24Z",
+          "kind": "post",
+          "title": "book correction stale closed",
+          "body": "clarified pleazy/plumber64 closed; live 5/5 listed.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364549641199628"
+          }
+        },
+        {
+          "id": "echo-book5-2087364360016720085",
+          "ts_utc": "2026-08-12T02:23:39Z",
+          "kind": "post",
+          "title": "book 5/5 keep building",
+          "body": "steady cadence desk beat; circuit site pass mention.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364360016720085"
+          }
+        },
+        {
+          "id": "echo-fill-orwell-2087364249995919615",
+          "ts_utc": "2026-08-12T02:23:13Z",
+          "kind": "post",
+          "title": "fill thesis orwell",
+          "body": "posted nova fill thesis; book 5/5.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364249995919615",
+            "ticker": "orwell"
+          }
+        },
+        {
+          "id": "echo-fill-elon-2087364247210856603",
+          "ts_utc": "2026-08-12T02:23:13Z",
+          "kind": "post",
+          "title": "fill thesis elon",
+          "body": "posted nova fill thesis; book 5/5.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364247210856603",
+            "ticker": "elon"
+          }
+        },
+        {
+          "id": "echo-fill-none-2087364244388167731",
+          "ts_utc": "2026-08-12T02:23:13Z",
+          "kind": "post",
+          "title": "fill thesis none",
+          "body": "posted nova fill thesis; book 5/5.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364244388167731",
+            "ticker": "none"
+          }
+        },
         {
           "id": "echo-thesis-jesus-2087363733958115482",
           "ts_utc": "2026-08-12T02:21:10Z",

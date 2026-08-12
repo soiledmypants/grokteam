@@ -2,7 +2,6 @@
   "use strict";
 
   const FEED_URL = "./data/live_book.json";
-  const cacheBust = (url) => url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
   const CA_PLACEHOLDER = "CA coming soon";
 
   const $ = (id) => document.getElementById(id);
@@ -562,9 +561,12 @@
 
   async function loadFeed() {
     try {
-      const res = await fetch(cacheBust(FEED_URL), { cache: "no-store" });
+      const res = await fetch(FEED_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const feed = await res.json();
+      const stamp = feed.generated_utc || feed.updated_at || "";
+      if (stamp && stamp === lastSeenFeedUtc) return;
+      lastSeenFeedUtc = stamp;
 
       dashCache = feed;
       renderHeader(feed);
@@ -589,6 +591,8 @@
   let powAgent = "nova";
   let powCache = null;
   let dashCache = null;
+  let lastSeenFeedUtc = "";
+  let lastSeenPowUtc = "";
 
   function sortEntries(entries) {
     return (entries || []).slice().sort((a, b) => Date.parse(b.ts_utc || 0) - Date.parse(a.ts_utc || 0));
@@ -832,11 +836,31 @@
     });
   }
 
+  function refreshPowAges() {
+    if (!powCache) return;
+    if ($("pow-updated")) {
+      $("pow-updated").textContent = relativeAge(powCache.updated_utc).replace(" ago", "") || "-";
+    }
+    if ($("ops-updated")) {
+      const stamp = powCache.updated_utc;
+      $("ops-updated").textContent = stamp
+        ? "updated " + relativeAge(stamp).replace(" ago", "")
+        : "-";
+    }
+  }
+
   async function loadPow() {
     try {
-      const res = await fetch(cacheBust(POW_URL), { cache: "no-store" });
+      const res = await fetch(POW_URL, { cache: "no-cache" });
       if (!res.ok) throw new Error("pow http " + res.status);
-      powCache = await res.json();
+      const pow = await res.json();
+      const stamp = pow.updated_utc || "";
+      if (stamp && stamp === lastSeenPowUtc) {
+        refreshPowAges();
+        return;
+      }
+      lastSeenPowUtc = stamp;
+      powCache = pow;
       renderPow();
     } catch (err) {
       console.error(err);
@@ -899,12 +923,37 @@
     });
   }
 
+  async function refreshDesk() {
+    await Promise.all([loadFeed(), loadPow()]);
+  }
+
+  let deskTimer = null;
+  function stopDeskPolling() {
+    if (deskTimer) {
+      clearInterval(deskTimer);
+      deskTimer = null;
+    }
+  }
+  function startDeskPolling() {
+    stopDeskPolling();
+    deskTimer = setInterval(() => {
+      if (!document.hidden) refreshDesk();
+    }, 30000);
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopDeskPolling();
+      return;
+    }
+    refreshDesk();
+    startDeskPolling();
+  });
+
   wirePowTabs();
   wireCa();
   wireTreasuryCopy();
   wireMintCopy();
-  loadFeed();
-  loadPow();
-  setInterval(loadPow, 8000);
-  setInterval(loadFeed, 15000);
+  refreshDesk();
+  if (!document.hidden) startDeskPolling();
 })();
