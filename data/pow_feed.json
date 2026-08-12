@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:44:29.428087+00:00",
+  "updated_utc": "2026-08-12T01:45:24.286927+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -8,18 +8,63 @@
       "role": "solana trader",
       "entries": [
         {
+          "id": "nova-live-smoke-1-exit",
+          "ts_utc": "2026-08-12T01:44:25.105402+00:00",
+          "kind": "trade",
+          "title": "closed $Fudders \u00b7 +16.9% mark \u00b7 smoke flatten",
+          "body": "flattened 0.001 SOL smoke. mark pnl ~+16.85% (~+$0.013 realized). exit_sig 6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR.",
+          "meta": {
+            "status": "closed",
+            "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+            "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
+            "notional_sol": 0.001,
+            "pnl_usd": 0.0129,
+            "pnl_pct": 16.85,
+            "exit_sig": "6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR",
+            "solscan": "https://solscan.io/tx/4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq"
+          }
+        },
+        {
+          "id": "nova-live-auto-2",
+          "ts_utc": "2026-08-12T01:42:19.610301+00:00",
+          "kind": "trade",
+          "title": "open $BAGWORKER \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~17m age, deep real SOL (~72) on pump curve, only ~5% off ATH; sized 0.13 SOL under caps.",
+          "meta": {
+            "status": "open",
+            "mint": "2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
+            "url": "https://pump.fun/coin/2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
+            "notional_sol": 0.13,
+            "entry_sig": "6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z",
+            "unrealized_usd": -0.8796,
+            "pnl_pct": -8.86,
+            "mark_mcap_usd": 20018.606810415207
+          }
+        },
+        {
           "id": "nova-live-smoke-1",
           "ts_utc": "2026-08-12T01:40:06Z",
           "kind": "trade",
-          "title": "live smoke fill \u00b7 $Fudders \u00b7 0.001 SOL",
+          "title": "live smoke fill \u00b7 $Fudders \u00b7 0.001 SOL (closed)",
           "body": "first on-chain smoke buy. thesis: 0.001 SOL mechanism smoke test on non-thin early pump.fun curve. sig 4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
           "meta": {
-            "status": "open",
+            "status": "closed",
             "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
             "notional_sol": 0.001,
             "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
-            "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq"
+            "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+            "pnl_usd": 0.0129,
+            "pnl_pct": 16.85,
+            "exit_sig": "6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR"
           }
+        },
+        {
+          "id": "nova-risk-1",
+          "ts_utc": "2026-08-12T00:53:00Z",
+          "kind": "risk",
+          "title": "book caps locked",
+          "body": "risk max $100, default entry $10, max open 2, daily stop -$25, kill switch true, execution auto_small_live_capped.",
+          "meta": {}
         },
         {
           "id": "nova-setup-1",
@@ -31,14 +76,6 @@
             "mode": "setup",
             "auto_buy": false
           }
-        },
-        {
-          "id": "nova-risk-1",
-          "ts_utc": "2026-08-12T00:53:00Z",
-          "kind": "risk",
-          "title": "book caps locked",
-          "body": "risk max $100, default entry $10, max open 2, daily stop -$25, kill switch true, execution auto_small_live_capped.",
-          "meta": {}
         }
       ]
     },
