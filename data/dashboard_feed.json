@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:57:58.239102+00:00",
+  "generated_utc": "2026-08-12T02:00:17Z",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -25,12 +25,12 @@
   },
   "pnl": {
     "realized_usd": -7.3888,
-    "unrealized_usd": 3.1702,
-    "open_count": 1,
+    "unrealized_usd": 2.7598,
+    "open_count": 2,
     "closed_count": 2,
     "currency": "USD",
-    "unrealized_sol": 0.041457,
-    "sol_usd": 76.36,
+    "unrealized_sol": 0.036137,
+    "sol_usd": 76.37,
     "realized_sol": -0.096625
   },
   "open_positions": [
@@ -45,7 +45,7 @@
       "mint": "BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
       "url": "https://pump.fun/coin/BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
       "notional_sol": 0.13,
-      "notional_usd": 9.9411,
+      "notional_usd": 9.9281,
       "entry_ts_utc": "2026-08-12T01:53:13.937579+00:00",
       "entry_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
       "solscan": "https://solscan.io/tx/29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
@@ -54,19 +54,53 @@
       "setup_grade": "B+",
       "agent": "nova",
       "entry_mcap_usd": 12225.912187747588,
-      "mark_mcap_usd": 16124.791873335522,
-      "ath_mcap_usd": 14013.633105644933,
-      "ath_dump_pct": 12.76,
-      "pnl_pct": 31.89,
-      "pnl_usd": 3.1702,
-      "pnl_sol": 0.041457,
-      "unrealized_usd": 3.1702,
-      "unrealized_sol": 0.041457,
+      "mark_mcap_usd": 13288.354826237508,
+      "ath_mcap_usd": 16120.98604967223,
+      "ath_dump_pct": 17.57,
+      "pnl_pct": 8.69,
+      "pnl_usd": 0.8628,
+      "pnl_sol": 0.011297,
+      "unrealized_usd": 0.8628,
+      "unrealized_sol": 0.011297,
       "complete": false,
       "decision": "HOLD",
-      "decision_note": "fresh entry this cycle",
+      "decision_note": "pnl 8.69%; ath_dump 17.57%; hold under TP/stop/time rules",
       "image_url": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq",
       "image_uri": "https://ipfs.io/ipfs/bafybeicdjgh7hespiu6avtsyptsqxx76tfs6woos7fjebakwcop7fzyubq"
+    },
+    {
+      "id": "live-auto-4",
+      "status": "open",
+      "mode": "live",
+      "ticker": "PLEAZY",
+      "name": "PLEAZY",
+      "symbol": "PLEAZY",
+      "description": "PLEAZY",
+      "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+      "url": "https://pump.fun/coin/9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9281,
+      "entry_ts_utc": "2026-08-12T01:57:52.989653+00:00",
+      "entry_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+      "solscan": "https://solscan.io/tx/5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+      "thesis": "AUTO cycle: ~13.1m age, real SOL (~60) on pump curve, ~16.0% off ATH at entry; sized 0.13 SOL under caps. Skipped project mint/BEARBULL/gngc(0x1772)/SVJ clones.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 7154.269487432113,
+      "mark_mcap_usd": 8521.285461929574,
+      "ath_mcap_usd": 8521.285461929574,
+      "ath_dump_pct": 0.0,
+      "pnl_pct": 19.11,
+      "pnl_usd": 1.897,
+      "pnl_sol": 0.02484,
+      "unrealized_usd": 1.897,
+      "unrealized_sol": 0.02484,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "fresh entry this cycle; entry_mcap from pre-buy enrich",
+      "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
+      "image_uri": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp"
     }
   ],
   "closed_positions": [
@@ -152,7 +186,7 @@
     "fee_destination_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
-    "note": "Project coin fees auto-swap to trading burner as capital inside hard caps."
+    "note": "fees claimed; trading active; inbound fee SOL = capital inside caps"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -200,12 +234,13 @@
     "user_session_greenlight": true,
     "project_coin_mint_known": true,
     "fee_routing_configured": true,
-    "note": "AUTO ARMED: small live buys+exits under caps, no per-trade approval. Kill switch on.",
+    "note": "AUTO ARMED: small live buys+exits under caps, no per-trade approval. Kill switch on. DEX paid.",
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 0.536254792,
-    "helius_ready": true
+    "burner_sol": 1.610262559,
+    "helius_ready": true,
+    "dex_paid": true
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -217,13 +252,12 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T01:53:13.937579+00:00",
-    "type": "auto_small_live_capped_recovery",
-    "bagworker": "STOP_FLATTEN",
-    "bagworker_exit_sig": "3Kiw9DXXPVhYmQry28Bhx2dtBaEXKm3ymDHCb1CpLEtzKWkD3ufD8dNkTBiGdrREqZqscQ2TRWFV2jmR2ebMnPtZ",
-    "bagworker_pnl_pct": -74.46,
-    "buy_ticker": "PV",
-    "buy_sig": "29kbdHBSR2qDai3KXTTSHKc2yt5H5RzzUwHr29UK4a12d8cnAZE5qCMyswddVsxfQcX7sGj64RbeWxwZcr3jQWSB",
-    "buy_ok": true
+    "ts_utc": "2026-08-12T02:00:12.106212+00:00",
+    "type": "auto_small_live_capped_post_mint",
+    "pv": "HOLD",
+    "buy_ticker": "PLEAZY",
+    "buy_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+    "buy_ok": true,
+    "gngc_attempt": "fail_0x1772"
   }
 }

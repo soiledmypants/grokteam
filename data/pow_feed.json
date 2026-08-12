@@ -1,12 +1,43 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:59:37.781273+00:00",
+  "updated_utc": "2026-08-12T02:00:57.724138+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-fees-claimed-1",
+          "ts_utc": "2026-08-12T02:00:57.724138+00:00",
+          "kind": "setup",
+          "title": "fees claimed \u00b7 trading active",
+          "body": "project coin fees claimed into trading burner. inbound fee SOL = capital inside hard caps. auto_small_live_capped armed.",
+          "meta": {
+            "fee_routing_status": "active",
+            "fee_mechanism": "auto_swap",
+            "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
+            "burner_sol": 1.610262559,
+            "mint": "DfxZvyyQLc91nMnWgN7r7brKzDkgVZN1cBwFXuP5pump"
+          }
+        },
+        {
+          "id": "nova-live-auto-4",
+          "ts_utc": "2026-08-12T01:57:52.989653+00:00",
+          "kind": "trade",
+          "title": "open $PLEAZY \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~13.1m age, real SOL (~60) on pump curve, ~16.0% off ATH at entry; sized 0.13 SOL under caps. Skipped project mint/BEARBULL/gngc(0x1772)/SVJ clones.",
+          "meta": {
+            "status": "open",
+            "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "url": "https://pump.fun/coin/9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "entry_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+            "notional_sol": 0.13,
+            "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
+            "unrealized_usd": 1.897,
+            "pnl_pct": 19.11
+          }
+        },
         {
           "id": "nova-live-smoke-1-exit",
           "ts_utc": "2026-08-12T01:44:25.105402+00:00",
