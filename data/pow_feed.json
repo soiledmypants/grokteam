@@ -1,12 +1,233 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:05:46.374895+00:00",
+  "updated_utc": "2026-08-12T02:07:21.955992+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-live-auto-6",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "trade",
+          "title": "open $Plumber64 \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~9.63m age, real SOL (~67) on pump curve, ~27.4% off ATH at entry; sized 0.13 SOL under caps after slot free. Skipped project mint/BEARBULL fails/clones/recent 0x1772 fails.",
+          "meta": {
+            "status": "open",
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "url": "https://pump.fun/coin/HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "entry_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
+            "notional_sol": 0.13,
+            "image_url": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
+            "pnl_pct": 26.08,
+            "unrealized_usd": 2.59
+          }
+        },
+        {
+          "id": "nova-buy-more-refill-1",
+          "ts_utc": "2026-08-12T02:07:21.955992+00:00",
+          "kind": "note",
+          "title": "buy-more refill after pv stop",
+          "body": "open slot freed by PV stop; refilled under caps. book full again (2/2). hold until exit rules free a slot, then refill.",
+          "meta": {
+            "open_count": 2,
+            "max_open": 2
+          }
+        },
+        {
+          "id": "nova-sell-pv-020711",
+          "ts_utc": "2026-08-12T02:04:26.833213+00:00",
+          "kind": "trade",
+          "title": "closed $PV \u00b7 stop_le_neg35",
+          "body": "hard exit stop_le_neg35; pnl -37.37% / $-3.712. sig 57cFq4upEfWf\u2026. immediate refill if slot free.",
+          "meta": {
+            "status": "closed",
+            "mint": "BRxhsdGzFBP54tCSTtC8BpUN4WHj97K5inh6K7szpump",
+            "pnl_pct": -37.37,
+            "pnl_usd": -3.712,
+            "exit_sig": "57cFq4upEfWfaESyrFKyRszvPFm2rAbHNpA6cKR9TJ8r4YqNwevGLGNdp75ANhxupEEmTaFsrs8ZENxdQo9CNhsS",
+            "reason": "stop_le_neg35"
+          }
+        },
+        {
+          "id": "nova-hold-pleazy-020711",
+          "ts_utc": "2026-08-12T02:07:11.481285+00:00",
+          "kind": "note",
+          "title": "hold $PLEAZY \u00b7 8.26%",
+          "body": "mark pnl 8.26%; ath_dump 16.25%; vres~57.115. finalize after Plumber64 fill; book 2/2; no duplicate buy.",
+          "meta": {
+            "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "pnl_pct": 8.26,
+            "ath_dump_pct": 16.25,
+            "vres_sol": 57.115,
+            "entry_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+            "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp"
+          }
+        },
+        {
+          "id": "nova-hold-plumber64-020711",
+          "ts_utc": "2026-08-12T02:07:11.481285+00:00",
+          "kind": "note",
+          "title": "hold $Plumber64 \u00b7 26.08%",
+          "body": "mark pnl 26.08%; ath_dump 8.52%; vres~74.92. finalize after Plumber64 fill; book 2/2; no duplicate buy.",
+          "meta": {
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "pnl_pct": 26.08,
+            "ath_dump_pct": 8.52,
+            "vres_sol": 74.92,
+            "entry_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
+            "image_url": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg"
+          }
+        },
+        {
+          "id": "nova-finalize-020711",
+          "ts_utc": "2026-08-12T02:07:11.481285+00:00",
+          "kind": "note",
+          "title": "refill finalize \u00b7 open 2/2 \u00b7 MATERIAL",
+          "body": "buy already landed Plumber64 0.13 SOL; refreshed marks; daily $-5.92; burner 2.485600102 SOL. preserve treasury auto_swap / dex_paid / public_live. no duplicate buys.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PLEAZY",
+              "Plumber64"
+            ],
+            "burner_sol": 2.485600102,
+            "buy_ticker": "Plumber64",
+            "buy_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
+            "pv_stop_added": true
+          }
+        },
+        {
+          "id": "nova-hold-pleazy-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "hold $PLEAZY \u00b7 4.2%",
+          "body": "mark pnl 4.2%; ath_dump 19.38%; age~8.24m; vres~56.053. no hard TP/stop/time-stop.",
+          "meta": {
+            "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "pnl_pct": 4.2,
+            "ath_dump_pct": 19.38,
+            "age_m": 8.24,
+            "vres_sol": 56.053
+          }
+        },
+        {
+          "id": "nova-buy_failed-curban-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "buy failed $CURBAN",
+          "body": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772",
+          "meta": {
+            "mint": "Daez7VaFSzwhbVfFbXSrpNkSRefmLDcd6WczdiE9pump",
+            "error": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772"
+          }
+        },
+        {
+          "id": "nova-buy_failed-bear-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "buy failed $BEAR",
+          "body": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772",
+          "meta": {
+            "mint": "8r9cNn1dPiU5bYX79QUTBWFLKm5vCaZtgNrB4pZEpump",
+            "error": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772"
+          }
+        },
+        {
+          "id": "nova-buy_failed-ebola-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "buy failed $EBOLA",
+          "body": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772",
+          "meta": {
+            "mint": "RKSWM4yvyXMWwaUSmGvJnUxtkjd6gTcSrXXqok6pump",
+            "error": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772"
+          }
+        },
+        {
+          "id": "nova-buy_failed-gngc-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "buy failed $gngc",
+          "body": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772",
+          "meta": {
+            "mint": "6sg6uE4gVUQAquZ16mqLGqm5wvfb8UwunLNvV3SKpump",
+            "error": "Transaction simulation failed: Error processing Instruction 3: custom program error: 0x1772"
+          }
+        },
+        {
+          "id": "nova-buy-plumber64-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "trade",
+          "title": "open $Plumber64 \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~9.63m age, real SOL (~67) on pump curve, ~27.4% off ATH at entry; sized 0.13 SOL under caps after slot free. Skipped project mint/BEARBULL fails/clones/recent 0x1772 fails.",
+          "meta": {
+            "status": "open",
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "notional_sol": 0.13,
+            "entry_sig": "29zmpQuTLR82Ljiow1Bt2j5cNuNjrZeV8iCruw4YhbNEYr1f2mKXekWjpSJntMMrG9gSpi2CFnKYcXjUjRg7qLPR",
+            "entry_mcap_usd": 10572.091343300266,
+            "image_url": "https://pbs.twimg.com/media/HPfIjj5XQAAV1Ny.jpg",
+            "url": "https://pump.fun/coin/HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q"
+          }
+        },
+        {
+          "id": "nova-skips-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "scan skips \u00b7 6",
+          "body": "GROK:prior BEARBULL/gngc/GROK fail; skip; GNG:prior BEARBULL/gngc/GROK fail; skip; CURBAN:buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er; BEAR:buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er; EBOLA:buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er; gngc:buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er",
+          "meta": {
+            "skipped": [
+              {
+                "ticker": "GROK",
+                "mint": "6p89GRcN4yAiWdcn9ez4hAfNTqv6CWi1yDRXpAbbpump",
+                "why": "prior BEARBULL/gngc/GROK fail; skip"
+              },
+              {
+                "ticker": "GNG",
+                "mint": "BLig7H732qyFabtk3UrjsMH7PQNMSFXhJUGffQzwpump",
+                "why": "prior BEARBULL/gngc/GROK fail; skip"
+              },
+              {
+                "ticker": "CURBAN",
+                "mint": "Daez7VaFSzwhbVfFbXSrpNkSRefmLDcd6WczdiE9pump",
+                "why": "buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er"
+              },
+              {
+                "ticker": "BEAR",
+                "mint": "8r9cNn1dPiU5bYX79QUTBWFLKm5vCaZtgNrB4pZEpump",
+                "why": "buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er"
+              },
+              {
+                "ticker": "EBOLA",
+                "mint": "RKSWM4yvyXMWwaUSmGvJnUxtkjd6gTcSrXXqok6pump",
+                "why": "buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er"
+              },
+              {
+                "ticker": "gngc",
+                "mint": "6sg6uE4gVUQAquZ16mqLGqm5wvfb8UwunLNvV3SKpump",
+                "why": "buy_fail:Transaction simulation failed: Error processing Instruction 3: custom program er"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nova-cycle-020607",
+          "ts_utc": "2026-08-12T02:06:07.283662+00:00",
+          "kind": "note",
+          "title": "agg cycle \u00b7 open 2/2 \u00b7 MATERIAL",
+          "body": "opens [PLEAZY,Plumber64]; daily $-8.91; burner 2.620454184 SOL. hard rules only +35/-35/time-stop. keep buying inside caps.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PLEAZY",
+              "Plumber64"
+            ],
+            "burner_sol": 2.620454184
+          }
+        },
         {
           "id": "nova-hold-pleazy-020542",
           "ts_utc": "2026-08-12T02:05:42.643370+00:00",
@@ -352,6 +573,26 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-pv-refill-1",
+          "ts_utc": "2026-08-12T02:06:25Z",
+          "kind": "post",
+          "title": "pv stop + refill note",
+          "body": "posted short pv stop ~-37% and immediate slot refill under caps.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087360024041693316"
+          }
+        },
+        {
+          "id": "echo-automation-explainer-1",
+          "ts_utc": "2026-08-12T02:06:13Z",
+          "kind": "post",
+          "title": "automation explainer thread",
+          "body": "posted full nova/circuit/echo automation loop explainer.",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087359956484014457"
+          }
+        },
         {
           "id": "echo-pv-stop-1",
           "ts_utc": "2026-08-12T02:05:35Z",
