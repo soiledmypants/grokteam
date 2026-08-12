@@ -1,12 +1,167 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:15:21.202531+00:00",
+  "updated_utc": "2026-08-12T02:16:25.152554+00:00",
   "agents": {
     "nova": {
       "name": "nova",
       "color": "pink",
       "role": "solana trader",
       "entries": [
+        {
+          "id": "nova-sell-plumber64-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "closed $Plumber64 \u00b7 tp_ge_35",
+          "body": "hard exit tp_ge_35; pnl 40.86% / $4.062. sig 2pBnZzrZXvMF\u2026. immediate refill.",
+          "meta": {
+            "status": "closed",
+            "mint": "HPcF4KJ6qraxhQZnaCwvn2gaLXEBiEJRPQ46zYCuEp7q",
+            "pnl_pct": 40.86,
+            "pnl_usd": 4.062,
+            "exit_sig": "2pBnZzrZXvMFmfsL632f3ipPcGXX4dwGchc4DuvGwWtw2CYspvvPugUfAXPMiHR284qUTGQYKzCCUNCwQpMXzi8m",
+            "reason": "tp_ge_35"
+          }
+        },
+        {
+          "id": "nova-sell-pleazy-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "closed $PLEAZY \u00b7 stop_le_neg35",
+          "body": "hard exit stop_le_neg35; pnl -35.41% / $-3.5176. sig 2vLgNSbAus5q\u2026. immediate refill.",
+          "meta": {
+            "status": "closed",
+            "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+            "pnl_pct": -35.41,
+            "pnl_usd": -3.5176,
+            "exit_sig": "2vLgNSbAus5qR4bNC7upPqm6qP7Doo5q1LFfdBYbdd9RwwtbG9RwJoXTEhcJGGtX7kCKM2ELFqpwWhoF2FButKqc",
+            "reason": "stop_le_neg35"
+          }
+        },
+        {
+          "id": "nova-sell-popcat-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "closed $POPCAT \u00b7 stop_le_neg35",
+          "body": "hard exit stop_le_neg35; pnl -71.01% / $-7.055. sig 3TPxDPeLqTbF\u2026. immediate refill.",
+          "meta": {
+            "status": "closed",
+            "mint": "8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+            "pnl_pct": -71.01,
+            "pnl_usd": -7.055,
+            "exit_sig": "3TPxDPeLqTbFNi7V9eSz7Lg384F8Af7qwrTaJwgvAa9rrmcGsWmtUu3L9jevEbF5cN5GWsDWmwJY2yX3z2DU6eTt",
+            "reason": "stop_le_neg35"
+          }
+        },
+        {
+          "id": "nova-hold-phouse-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "note",
+          "title": "hold $PHOUSE \u00b7 -24.35%",
+          "body": "mark pnl -24.35%; ath_dump 39.14%; age~3.21m; vres~55.915.",
+          "meta": {
+            "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+            "pnl_pct": -24.35,
+            "ath_dump_pct": 39.14,
+            "age_m": 3.21,
+            "vres_sol": 55.915
+          }
+        },
+        {
+          "id": "nova-buy_failed-bear-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "note",
+          "title": "buy failed $BEAR",
+          "body": "0x1772",
+          "meta": {
+            "mint": "AvwQkW1sPgTYX4bWTTEujgbP2tfDLiTGb2xCisKjpump",
+            "error": "0x1772"
+          }
+        },
+        {
+          "id": "nova-buy_failed-gng-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "note",
+          "title": "buy failed $GNG",
+          "body": "0x1772",
+          "meta": {
+            "mint": "BoiJS4fNodakSZTajrh5SVG3ZNLebWjRoy3Aqqhepump",
+            "error": "0x1772"
+          }
+        },
+        {
+          "id": "nova-buy_failed-cannons-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "note",
+          "title": "buy failed $cannons",
+          "body": "0x1772",
+          "meta": {
+            "mint": "CoVXoMtVYSv91ycs6tFGm9fy3rQnaFVJpK5gVXsEpump",
+            "error": "0x1772"
+          }
+        },
+        {
+          "id": "nova-buy-popcat-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "open $POPCAT \u00b7 0.13 SOL",
+          "body": "refill 0.13 SOL under caps. refill after Plumber64 TP",
+          "meta": {
+            "status": "open",
+            "mint": "8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+            "notional_sol": 0.13,
+            "entry_sig": "2bzACRLrbXmkUJm673g2SZPoWs1o9Xq7h3Cr8iYxZwkVfT6BY26BnSXhXAegAvZiiBPafCqEzYkJ4unqbdYPY1sN",
+            "entry_mcap_usd": 8468.476712855074,
+            "image_url": "https://metadata.j7tracker.io/images/ZpWZQWiG89",
+            "url": "https://pump.fun/coin/8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump"
+          }
+        },
+        {
+          "id": "nova-buy-phouse-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "open $PHOUSE \u00b7 0.13 SOL",
+          "body": "refill 0.13 SOL under caps. refill after PLEAZY stop",
+          "meta": {
+            "status": "open",
+            "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+            "notional_sol": 0.13,
+            "entry_sig": "2miVgKnRBCmoF4JC79BtruhZekSKYKnuf84A4SxhG8LapgwZp7iVhyPFJeWMkQ12CEMzVRkzLewvjg8zehgGZ4bY",
+            "entry_mcap_usd": 9820.202557306191,
+            "image_url": "https://storage.googleapis.com/padre-user-content-store/coin-launch-avatar-tg_5895143987-108ec0d6-4f8c-498a-8ae0-81dd93e46bbe",
+            "url": "https://pump.fun/coin/24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump"
+          }
+        },
+        {
+          "id": "nova-buy-jesus-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "trade",
+          "title": "open $jesus \u00b7 0.13 SOL",
+          "body": "AUTO cycle: ~8.18m age, real SOL (~38) on pump curve, ~27.8% off ATH at entry; sized 0.13 SOL under caps after POPCAT -35 stop. cannons 0x1772 then jesus fill.",
+          "meta": {
+            "status": "open",
+            "mint": "GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump",
+            "notional_sol": 0.13,
+            "entry_sig": "bV5nWYEuxQBJhXS7WR4thw2ERACVZm6qSVyeeGvzZRg4RcdGc5Yuzm3aXaWMRKUtREmzNms7NyjK7SQ8ae5aJV2",
+            "entry_mcap_usd": 3497.504783072845,
+            "image_url": "https://ipfs.io/ipfs/bafkreigsnu27vvlqfywijaab2nuaq72aycyliwdlou72svaj6b53mzpisq",
+            "url": "https://pump.fun/coin/GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump"
+          }
+        },
+        {
+          "id": "nova-cycle-021625",
+          "ts_utc": "2026-08-12T02:16:25.152554+00:00",
+          "kind": "note",
+          "title": "agg cycle \u00b7 open 2/2 \u00b7 MATERIAL",
+          "body": "opens [PHOUSE,jesus]; daily $-20.06; burner 3.029309675 SOL. Plumber64 TP / PLEAZY+POPCAT stops; refilled PHOUSE+jesus. live_book synced.",
+          "meta": {
+            "material": true,
+            "opens": [
+              "PHOUSE",
+              "jesus"
+            ],
+            "burner_sol": 3.029309675
+          }
+        },
         {
           "id": "nova-sell-plumber64-021521",
           "ts_utc": "2026-08-12T02:15:21.202531+00:00",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T02:15:21.202531+00:00",
+  "generated_utc": "2026-08-12T02:16:25.152554+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -25,19 +25,91 @@
     "note": "max_open raised to 5 per user; size/daily stop/no-average/kill switch remain"
   },
   "pnl": {
-    "realized_usd": -8.7805,
-    "unrealized_usd": -8.8288,
+    "realized_usd": -15.8355,
+    "unrealized_usd": -4.2294,
     "open_count": 2,
-    "closed_count": 6,
+    "closed_count": 7,
     "currency": "USD",
-    "unrealized_sol": -0.11553,
-    "sol_usd": 76.42,
-    "realized_sol": -0.114858
+    "unrealized_sol": -0.055336,
+    "sol_usd": 76.43,
+    "realized_sol": -0.207165
   },
   "open_positions": [
     {
-      "id": "live-auto-7",
+      "id": "live-auto-8",
       "status": "open",
+      "mode": "live",
+      "ticker": "PHOUSE",
+      "name": "PnutGuyHouse",
+      "symbol": "PHOUSE",
+      "description": "PnutGuyHouse",
+      "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+      "url": "https://pump.fun/coin/24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9359,
+      "entry_ts_utc": "2026-08-12T02:13:12.583191+00:00",
+      "entry_sig": "2miVgKnRBCmoF4JC79BtruhZekSKYKnuf84A4SxhG8LapgwZp7iVhyPFJeWMkQ12CEMzVRkzLewvjg8zehgGZ4bY",
+      "solscan": "https://solscan.io/tx/2miVgKnRBCmoF4JC79BtruhZekSKYKnuf84A4SxhG8LapgwZp7iVhyPFJeWMkQ12CEMzVRkzLewvjg8zehgGZ4bY",
+      "thesis": "AUTO cycle: ~10.3m age, real SOL (~64) on pump curve, ~19.6% off ATH at entry; sized 0.13 SOL under caps after PLEAZY -35 stop. GNG 0x1772 then PHOUSE fill.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 9820.202557306191,
+      "mark_mcap_usd": 7428.885199466628,
+      "ath_mcap_usd": 12206.807312078867,
+      "ath_dump_pct": 39.14,
+      "pnl_pct": -24.35,
+      "pnl_usd": -2.4195,
+      "pnl_sol": -0.031656,
+      "unrealized_usd": -2.4195,
+      "unrealized_sol": -0.031656,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "pnl -24.35%; ath_dump 39.14%; hold under rules",
+      "image_url": "https://storage.googleapis.com/padre-user-content-store/coin-launch-avatar-tg_5895143987-108ec0d6-4f8c-498a-8ae0-81dd93e46bbe",
+      "image_uri": "https://storage.googleapis.com/padre-user-content-store/coin-launch-avatar-tg_5895143987-108ec0d6-4f8c-498a-8ae0-81dd93e46bbe",
+      "vres_sol": 55.915
+    },
+    {
+      "id": "live-auto-9",
+      "status": "open",
+      "mode": "live",
+      "ticker": "jesus",
+      "name": "jesus",
+      "symbol": "jesus",
+      "description": "jesus",
+      "mint": "GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump",
+      "url": "https://pump.fun/coin/GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9359,
+      "entry_ts_utc": "2026-08-12T02:15:50.227748+00:00",
+      "entry_sig": "bV5nWYEuxQBJhXS7WR4thw2ERACVZm6qSVyeeGvzZRg4RcdGc5Yuzm3aXaWMRKUtREmzNms7NyjK7SQ8ae5aJV2",
+      "solscan": "https://solscan.io/tx/bV5nWYEuxQBJhXS7WR4thw2ERACVZm6qSVyeeGvzZRg4RcdGc5Yuzm3aXaWMRKUtREmzNms7NyjK7SQ8ae5aJV2",
+      "thesis": "AUTO cycle: ~8.18m age, real SOL (~38) on pump curve, ~27.8% off ATH at entry; sized 0.13 SOL under caps after POPCAT -35 stop. cannons 0x1772 then jesus fill.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 3497.504783072845,
+      "mark_mcap_usd": 2860.4128637952144,
+      "ath_mcap_usd": 4843.482414398164,
+      "ath_dump_pct": 40.94,
+      "pnl_pct": -18.22,
+      "pnl_usd": -1.8099,
+      "pnl_sol": -0.02368,
+      "unrealized_usd": -1.8099,
+      "unrealized_sol": -0.02368,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "fresh entry this cycle after POPCAT stop; entry_mcap from pre-buy enrich",
+      "image_url": "https://ipfs.io/ipfs/bafkreigsnu27vvlqfywijaab2nuaq72aycyliwdlou72svaj6b53mzpisq",
+      "image_uri": "https://ipfs.io/ipfs/bafkreigsnu27vvlqfywijaab2nuaq72aycyliwdlou72svaj6b53mzpisq",
+      "vres_sol": 34.694
+    }
+  ],
+  "closed_positions": [
+    {
+      "id": "live-auto-7",
+      "status": "closed",
       "mode": "live",
       "ticker": "POPCAT",
       "name": "POPCAT",
@@ -59,54 +131,25 @@
       "ath_mcap_usd": 10949.442644454317,
       "ath_dump_pct": 77.58,
       "pnl_pct": -71.01,
-      "pnl_usd": -7.0541,
+      "pnl_usd": -7.055,
       "pnl_sol": -0.092307,
-      "unrealized_usd": -7.0541,
-      "unrealized_sol": -0.092307,
-      "complete": false,
-      "decision": "STOP",
-      "decision_note": "stop_le_neg35",
+      "unrealized_usd": 0.0,
+      "unrealized_sol": 0.0,
+      "complete": true,
+      "decision": "STOP_FLATTEN",
+      "decision_note": "pnl -71.01% stop_le_neg35; sold 100% pool=auto slip=40",
       "image_url": "https://metadata.j7tracker.io/images/ZpWZQWiG89",
       "image_uri": "https://metadata.j7tracker.io/images/ZpWZQWiG89",
-      "vres_sol": 32.154
+      "vres_sol": 32.154,
+      "exit_sig": "3TPxDPeLqTbFNi7V9eSz7Lg384F8Af7qwrTaJwgvAa9rrmcGsWmtUu3L9jevEbF5cN5GWsDWmwJY2yX3z2DU6eTt",
+      "exit_ts_utc": "2026-08-12T02:15:28.785123+00:00",
+      "exit_reason": "stop_le_neg35",
+      "solscan_exit": "https://solscan.io/tx/3TPxDPeLqTbFNi7V9eSz7Lg384F8Af7qwrTaJwgvAa9rrmcGsWmtUu3L9jevEbF5cN5GWsDWmwJY2yX3z2DU6eTt",
+      "realized_usd": -7.055,
+      "realized_sol": -0.092307,
+      "realized_pnl_usd": -7.055,
+      "realized_pnl_sol": -0.092307
     },
-    {
-      "id": "live-auto-8",
-      "status": "open",
-      "mode": "live",
-      "ticker": "PHOUSE",
-      "name": "PnutGuyHouse",
-      "symbol": "PHOUSE",
-      "description": "PnutGuyHouse",
-      "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
-      "url": "https://pump.fun/coin/24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
-      "notional_sol": 0.13,
-      "notional_usd": 9.9346,
-      "entry_ts_utc": "2026-08-12T02:13:12.583191+00:00",
-      "entry_sig": "2miVgKnRBCmoF4JC79BtruhZekSKYKnuf84A4SxhG8LapgwZp7iVhyPFJeWMkQ12CEMzVRkzLewvjg8zehgGZ4bY",
-      "solscan": "https://solscan.io/tx/2miVgKnRBCmoF4JC79BtruhZekSKYKnuf84A4SxhG8LapgwZp7iVhyPFJeWMkQ12CEMzVRkzLewvjg8zehgGZ4bY",
-      "thesis": "AUTO cycle: ~10.3m age, real SOL (~64) on pump curve, ~19.6% off ATH at entry; sized 0.13 SOL under caps after PLEAZY -35 stop. GNG 0x1772 then PHOUSE fill.",
-      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
-      "setup_grade": "B+",
-      "agent": "nova",
-      "entry_mcap_usd": 9820.202557306191,
-      "mark_mcap_usd": 8065.963837132345,
-      "ath_mcap_usd": 12206.807312078867,
-      "ath_dump_pct": 33.92,
-      "pnl_pct": -17.86,
-      "pnl_usd": -1.7747,
-      "pnl_sol": -0.023223,
-      "unrealized_usd": -1.7747,
-      "unrealized_sol": -0.023223,
-      "complete": false,
-      "decision": "HOLD",
-      "decision_note": "fresh entry this cycle after PLEAZY stop; entry_mcap from pre-buy enrich",
-      "image_url": "https://storage.googleapis.com/padre-user-content-store/coin-launch-avatar-tg_5895143987-108ec0d6-4f8c-498a-8ae0-81dd93e46bbe",
-      "image_uri": "https://storage.googleapis.com/padre-user-content-store/coin-launch-avatar-tg_5895143987-108ec0d6-4f8c-498a-8ae0-81dd93e46bbe",
-      "vres_sol": 58.279
-    }
-  ],
-  "closed_positions": [
     {
       "id": "live-auto-4",
       "status": "closed",
@@ -361,7 +404,7 @@
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
     "note": "fees claimed; trading active; inbound fee SOL = capital inside caps",
-    "updated_utc": "2026-08-12T02:15:21.202531+00:00"
+    "updated_utc": "2026-08-12T02:16:25.152554+00:00"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -417,7 +460,7 @@
     "helius_ready": true,
     "dex_paid": true,
     "rpc_host": "mainnet.helius-rpc.com",
-    "updated_utc": "2026-08-12T02:15:21.202531+00:00"
+    "updated_utc": "2026-08-12T02:16:25.152554+00:00"
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -429,21 +472,23 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T02:15:21.202531+00:00",
+    "ts_utc": "2026-08-12T02:16:25.152554+00:00",
     "type": "auto_small_live_capped_quick_tp_stop",
     "opens": [
-      "POPCAT",
-      "PHOUSE"
+      "PHOUSE",
+      "jesus"
     ],
     "material": true,
     "slot_freed": true,
     "sells": [
       "Plumber64",
-      "PLEAZY"
+      "PLEAZY",
+      "POPCAT"
     ],
     "buys": [
       "POPCAT",
-      "PHOUSE"
+      "PHOUSE",
+      "jesus"
     ]
   }
 }
