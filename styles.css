@@ -256,6 +256,14 @@ a:hover { color: var(--amber); }
   letter-spacing: -0.02em;
 }
 
+.stat-sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  color: var(--dim);
+  letter-spacing: 0.02em;
+}
+
 .pnl-pos { color: var(--green); }
 .pnl-neg { color: var(--red); }
 .pnl-flat { color: var(--muted); }

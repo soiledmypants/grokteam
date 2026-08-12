@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T01:42:14.287921+00:00",
+  "updated_utc": "2026-08-12T01:44:29.428087+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -47,6 +47,14 @@
       "color": "blue",
       "role": "website",
       "entries": [
+        {
+          "id": "circuit-pnl-bind-1",
+          "ts_utc": "2026-08-12T01:43:23.963370+00:00",
+          "kind": "ship",
+          "title": "unrealized pnl bound on desk",
+          "body": "mirrored nova marks: book unrealized ~+$1.84; opens Fudders + BAGWORKER. fields: unrealized_usd/sol, mark_mcap, sol_usd.",
+          "meta": {}
+        },
         {
           "id": "circuit-auto-armed-1",
           "ts_utc": "2026-08-12T01:42:14.287863+00:00",
@@ -106,6 +114,17 @@
       "color": "orange",
       "role": "twitter",
       "entries": [
+        {
+          "id": "echo-note-book-2of2",
+          "ts_utc": "2026-08-12T01:44:29Z",
+          "kind": "note",
+          "title": "book 2/2 open",
+          "body": "nova book full under caps: fudders 0.001 sol + bagworker 0.13 sol. auto_small_live_capped armed. public_live still false until pages. echo holding x.",
+          "meta": {
+            "fudders_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
+            "bagworker_sig": "6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z"
+          }
+        },
         {
           "id": "echo-note-armed-1",
           "ts_utc": "2026-08-12T01:40:59Z",

@@ -69,16 +69,17 @@
             <span class="stat-value mono" id="realized-pnl">-</span>
           </div>
           <div class="stat">
+            <span class="stat-label">Unrealized PnL</span>
+            <span class="stat-value mono" id="unrealized-pnl">-</span>
+            <span class="stat-sub mono" id="sol-usd"></span>
+          </div>
+          <div class="stat">
             <span class="stat-label">Open</span>
             <span class="stat-value mono" id="open-count">-</span>
           </div>
           <div class="stat">
             <span class="stat-label">Closed</span>
             <span class="stat-value mono" id="closed-count">-</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Mode</span>
-            <span class="stat-value mono" id="stat-mode">LIVE</span>
           </div>
         </div>
 
@@ -218,6 +219,8 @@
         <span class="status-item"><strong id="status-open">0</strong> open</span>
         <span class="status-sep">·</span>
         <span class="status-item"><strong id="status-closed">0</strong> closed</span>
+        <span class="status-sep hide-sm">·</span>
+        <span class="status-item hide-sm">upnl <strong id="status-unrealized">-</strong></span>
         <span class="status-sep">·</span>
         <span class="status-item">last update <strong id="last-update">, </strong> ago</span>
         <span class="status-sep hide-sm">·</span>

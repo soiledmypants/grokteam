@@ -31,6 +31,18 @@
     return fmtUsd(n);
   }
 
+  function fmtSol(n) {
+    if (n == null || Number.isNaN(Number(n))) return "-";
+    const v = Number(n);
+    const abs = Math.abs(v);
+    let digits = 4;
+    if (abs >= 100) digits = 2;
+    else if (abs >= 1) digits = 3;
+    else if (abs >= 0.01) digits = 4;
+    else digits = 6;
+    return `${abs.toFixed(digits).replace(/\.?0+$/, "") || "0"} SOL`;
+  }
+
   function cleanCopy(s) {
     return String(s ?? "")
       .replace(/[\u2014\u2013]/g, ", ")
@@ -128,7 +140,12 @@
     grid.innerHTML = positions
       .map((p) => {
         const grade = (p.setup_grade || "?").toUpperCase();
-        const markPending = p.pnl_usd == null && p.pnl_pct == null;
+        const uPnl = p.unrealized_usd != null ? p.unrealized_usd : p.pnl_usd;
+        const markPending = p.unrealized_usd == null && p.pnl_usd == null;
+        const markLine = markPending
+          ? "- · mark pending"
+          : `${fmtUsd(uPnl, { signed: true })} · ${fmtPct(p.pnl_pct)}` +
+            (p.unrealized_sol != null ? ` · ${fmtSol(p.unrealized_sol)}` : "");
         const link = p.url
           ? `<div class="pos-link"><a href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">pump.fun ↗</a></div>`
           : "";
@@ -153,13 +170,13 @@
                 <span class="metric-v">${escapeHtml(fmtMcap(p.entry_mcap_usd))}</span>
               </div>
               <div>
-                <span class="metric-k">Curve @ entry</span>
-                <span class="metric-v">${p.curve_pct_at_entry != null ? escapeHtml(p.curve_pct_at_entry.toFixed(1) + "%") : ", "}</span>
+                <span class="metric-k">Mark mcap</span>
+                <span class="metric-v">${escapeHtml(fmtMcap(p.mark_mcap_usd))}</span>
               </div>
               <div>
                 <span class="metric-k">Mark / PnL</span>
-                <span class="metric-v ${markPending ? "pending" : pnlClass(p.pnl_usd)}">
-                  ${markPending ? "- · mark pending" : `${escapeHtml(fmtUsd(p.pnl_usd, { signed: true }))} · ${escapeHtml(fmtPct(p.pnl_pct))}`}
+                <span class="metric-v ${markPending ? "pending" : pnlClass(uPnl)}">
+                  ${markPending ? "- · mark pending" : escapeHtml(markLine)}
                 </span>
               </div>
             </div>
@@ -269,6 +286,7 @@
     const openCount = pnl.open_count ?? (feed.open_positions || []).length;
     const closedCount = pnl.closed_count ?? (feed.closed_positions || []).length;
     const realized = pnl.realized_usd;
+    const unrealized = pnl.unrealized_usd;
 
     const badge = $("mode-badge");
     if (badge) {
@@ -281,6 +299,22 @@
     if (realizedEl) {
       realizedEl.textContent = fmtUsd(realized, { signed: true });
       realizedEl.className = `stat-value mono ${pnlClass(realized)}`;
+    }
+
+    const unrealizedEl = $("unrealized-pnl");
+    if (unrealizedEl) {
+      unrealizedEl.textContent = fmtUsd(unrealized, { signed: true });
+      unrealizedEl.className = `stat-value mono ${pnlClass(unrealized)}`;
+    }
+
+    const solUsdEl = $("sol-usd");
+    if (solUsdEl) {
+      solUsdEl.textContent = pnl.sol_usd != null ? `sol ${fmtUsd(pnl.sol_usd)}` : "";
+    }
+
+    if ($("status-unrealized")) {
+      $("status-unrealized").textContent = fmtUsd(unrealized, { signed: true });
+      $("status-unrealized").className = pnlClass(unrealized);
     }
 
     if ($("open-count")) $("open-count").textContent = String(openCount);
@@ -390,19 +424,25 @@
   function novaTradeEntries(feed) {
     const out = [];
     for (const p of feed.open_positions || []) {
+      const uPnl = p.unrealized_usd != null ? p.unrealized_usd : p.pnl_usd;
+      const pnlBit = uPnl == null ? "" : " · " + fmtUsd(uPnl, { signed: true });
+      const meta = {
+        status: "open",
+        mint: p.mint,
+        url: p.url,
+        notional_usd: p.notional_usd,
+        entry_mcap_usd: p.entry_mcap_usd,
+      };
+      if (p.mark_mcap_usd != null) meta.mark_mcap_usd = p.mark_mcap_usd;
+      if (p.unrealized_usd != null) meta.unrealized_usd = p.unrealized_usd;
+      if (p.pnl_pct != null) meta.pnl_pct = p.pnl_pct;
       out.push({
         id: "trade-open-" + (p.id || p.ticker),
         ts_utc: p.entry_ts_utc || p.updated_utc || feed.generated_utc,
         kind: "trade",
-        title: "open $" + (p.ticker || "?") + (p.setup_grade ? " · grade " + p.setup_grade : ""),
+        title: "open $" + (p.ticker || "?") + (p.setup_grade ? " · grade " + p.setup_grade : "") + pnlBit,
         body: (p.thesis || "thesis pending") + (p.invalidation ? " | invalidate: " + p.invalidation : ""),
-        meta: {
-          status: "open",
-          mint: p.mint,
-          url: p.url,
-          notional_usd: p.notional_usd,
-          entry_mcap_usd: p.entry_mcap_usd,
-        },
+        meta,
       });
     }
     for (const p of feed.closed_positions || []) {

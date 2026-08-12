@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:40:49.946274+00:00",
+  "generated_utc": "2026-08-12T01:44:25.105402+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -23,23 +23,58 @@
     "max_entry_sol": 0.26
   },
   "pnl": {
-    "realized_usd": 0.0,
-    "unrealized_usd": 0.0,
+    "realized_usd": 0.0129,
+    "unrealized_usd": -0.8796,
     "open_count": 1,
-    "closed_count": 0,
-    "currency": "USD"
+    "closed_count": 1,
+    "currency": "USD",
+    "unrealized_sol": -0.011523,
+    "sol_usd": 76.34,
+    "realized_sol": 0.000168
   },
   "open_positions": [
     {
-      "id": "live-smoke-1",
+      "id": "live-auto-2",
       "status": "open",
+      "mode": "live",
+      "ticker": "BAGWORKER",
+      "name": "Bag Worker",
+      "mint": "2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
+      "url": "https://pump.fun/coin/2roPP8nKZAWNLW4UKgpCdjHr9tyCFunPcxUdmboVpump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9242,
+      "entry_ts_utc": "2026-08-12T01:42:19.610301+00:00",
+      "entry_sig": "6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z",
+      "solscan": "https://solscan.io/tx/6GrH7CbAV6A6Z8WBiRWWEbnz9MB9TcbuCpkArTJBsfnaYrA81835fYZz4kVR7ERGoU49JGYoxcjyfnxk6PXrA8Z",
+      "thesis": "AUTO cycle: ~17m age, deep real SOL (~72) on pump curve, only ~5% off ATH; sized 0.13 SOL under caps.",
+      "invalidation": ">40% ATH dump, thin curve, or hard rug; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "pnl_usd": -0.8796,
+      "pnl_pct": -8.86,
+      "entry_mcap_usd": 21965.5504563218,
+      "mark_mcap_usd": 20018.606810415207,
+      "pnl_sol": -0.011523,
+      "unrealized_usd": -0.8796,
+      "unrealized_sol": -0.011523,
+      "ath_mcap_usd": 32201.16097917802,
+      "ath_dump_pct": 37.83,
+      "complete": true,
+      "decision": "HOLD",
+      "decision_note": "pnl -8.86% (need +35 TP / -35 stop); ath_dump 37.83% (<40 or reserves not collapsing \u2014 graduated pumpswap); age ~2m (<45m time-stop)"
+    }
+  ],
+  "closed_positions": [
+    {
+      "id": "live-smoke-1",
+      "status": "closed",
       "mode": "live",
       "ticker": "Fudders",
       "name": "Fudders",
       "mint": "64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
       "url": "https://pump.fun/coin/64EYGmyeJkWhEZKmNaysXsqWCTmTmuEZHSdHjJAapump",
       "notional_sol": 0.001,
-      "notional_usd": null,
+      "notional_usd": 0.0763,
       "entry_ts_utc": "2026-08-12T01:39:42.939434+00:00",
       "entry_sig": "4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
       "solscan": "https://solscan.io/tx/4fw6zuMjk443q6AjQWCQScxnvkGSbhgTdmMeB6LzuZnFPUF5Vbcvo8mh997A1bDfoXWR38TFrAdYTRt7gdMhESXq",
@@ -47,11 +82,23 @@
       "invalidation": "hard dump / curve death; flatten after smoke confirm",
       "setup_grade": "B",
       "agent": "nova",
-      "pnl_usd": null,
-      "pnl_pct": null
+      "pnl_usd": 0.0129,
+      "pnl_pct": 16.85,
+      "entry_mcap_usd": 4183.007412893062,
+      "mark_mcap_usd": 4887.646363948726,
+      "pnl_sol": 0.000168,
+      "unrealized_usd": 0.0129,
+      "unrealized_sol": 0.000168,
+      "exit_sig": "6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR",
+      "exit_ts_utc": "2026-08-12T01:44:25.105402+00:00",
+      "exit_reason": "smoke_flatten_after_confirm",
+      "solscan_exit": "https://solscan.io/tx/6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR",
+      "realized_usd": 0.0129,
+      "realized_sol": 0.000168,
+      "realized_pnl_usd": 0.0129,
+      "realized_pnl_sol": 0.000168
     }
   ],
-  "closed_positions": [],
   "treasury": {
     "project_coin_mint": null,
     "fee_mechanism": null,
@@ -110,7 +157,7 @@
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 0.643698971,
+    "burner_sol": 0.509144888,
     "helius_ready": true
   },
   "pull": {
@@ -121,5 +168,14 @@
       "process_drills",
       "drill_realized_usd"
     ]
+  },
+  "last_cycle": {
+    "ts_utc": "2026-08-12T01:44:25.105402+00:00",
+    "type": "manage",
+    "fudders": "flattened_100pct",
+    "fudders_exit_sig": "6XemRUafgh4aBPcvGYG2Ps2fmqT5nEUn6q9vqwLpUUTbJtrEESsmR7VSbUkkvm3Gb24F6b75hfY2necaNNjQGDR",
+    "bagworker": "HOLD",
+    "bagworker_pnl_pct": -8.86,
+    "bagworker_ath_dump_pct": 37.83
   }
 }
