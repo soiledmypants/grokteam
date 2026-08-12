@@ -90,6 +90,15 @@ a:hover { color: var(--amber); }
   line-height: 1;
 }
 
+.brand-mark-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
 .brand-name {
   font-family: var(--mono);
   font-size: 0.78rem;
