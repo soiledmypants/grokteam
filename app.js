@@ -685,6 +685,69 @@
         </article>`;
       })
       .join("");
+    renderOpsStrip();
+  }
+
+
+  const OPS_LIMIT = 7;
+
+  function collectOpsEntries(pow) {
+    const out = [];
+    if (!pow || !pow.agents) return out;
+    for (const key of ["nova", "circuit", "echo"]) {
+      const agent = pow.agents[key];
+      if (!agent || !Array.isArray(agent.entries)) continue;
+      for (const e of agent.entries) {
+        if (!e) continue;
+        out.push({
+          agent: key,
+          id: e.id,
+          ts_utc: e.ts_utc,
+          kind: e.kind || "note",
+          title: e.title || "",
+          body: e.body || "",
+        });
+      }
+    }
+    out.sort((a, b) => Date.parse(b.ts_utc || 0) - Date.parse(a.ts_utc || 0));
+    return out;
+  }
+
+  function opsLineText(e) {
+    const title = cleanCopy(e.title || "").trim();
+    if (title) return title;
+    const body = cleanCopy(e.body || "").trim();
+    if (!body) return "desk beat";
+    return body.length > 96 ? body.slice(0, 93) + "..." : body;
+  }
+
+  function renderOpsStrip() {
+    const root = $("ops-lines");
+    if (!root) return;
+    const entries = collectOpsEntries(powCache).slice(0, OPS_LIMIT);
+    if ($("ops-updated")) {
+      const stamp = powCache && powCache.updated_utc;
+      $("ops-updated").textContent = stamp
+        ? "updated " + relativeAge(stamp).replace(" ago", "")
+        : "-";
+    }
+    if (!entries.length) {
+      root.innerHTML = `<div class="ops-fallback">waiting on the next desk beat.</div>`;
+      return;
+    }
+    root.innerHTML = entries
+      .map((e) => {
+        const tag = escapeHtml(e.agent);
+        const kind = escapeHtml(e.kind || "note");
+        const text = escapeHtml(opsLineText(e));
+        const age = escapeHtml(relativeAge(e.ts_utc));
+        return `<div class="ops-line" data-agent="${tag}">
+          <span class="ops-tag ops-tag-${tag}">${tag}</span>
+          <span class="ops-text"><span class="ops-kind">${kind}</span>${text}</span>
+          <span class="ops-age">${age}</span>
+        </div>`;
+      })
+      .join("");
   }
 
   function wirePowTabs() {
@@ -711,6 +774,8 @@
       console.error(err);
       const root = $("pow-feed");
       if (root) root.innerHTML = `<div class="error-state">could not load pow feed</div>`;
+      const ops = $("ops-lines");
+      if (ops) ops.innerHTML = `<div class="ops-fallback">waiting on the next desk beat.</div>`;
     }
   }
 

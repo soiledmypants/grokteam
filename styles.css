@@ -1382,3 +1382,143 @@ a:hover { color: var(--amber); }
   color: var(--dim);
 }
 .how-steps strong { color: var(--text); font-weight: 600; }
+
+
+/* Live ops strip under hero */
+.ops-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #0d0d0f;
+}
+
+.ops-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem 0.85rem;
+}
+
+.ops-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.ops-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--green-dim);
+  flex: 0 0 auto;
+}
+
+.ops-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--text);
+}
+
+.ops-sub {
+  margin-left: auto;
+  font-size: 0.65rem;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+
+.ops-lines {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.ops-line {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.55rem 0.7rem;
+  padding: 0.28rem 0.15rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.ops-line:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.ops-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ops-tag-nova {
+  color: #ff7eb4;
+  border-color: rgba(255, 77, 154, 0.4);
+  background: rgba(255, 77, 154, 0.08);
+}
+
+.ops-tag-circuit {
+  color: #6bb6ff;
+  border-color: rgba(59, 158, 255, 0.4);
+  background: rgba(59, 158, 255, 0.08);
+}
+
+.ops-tag-echo {
+  color: #ffb07a;
+  border-color: rgba(255, 138, 61, 0.4);
+  background: rgba(255, 138, 61, 0.08);
+}
+
+.ops-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.ops-text .ops-kind {
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  margin-right: 0.4rem;
+}
+
+.ops-age {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+.ops-fallback {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--dim);
+  padding: 0.2rem 0;
+}
+
+@media (max-width: 640px) {
+  .ops-line {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.25rem 0.55rem;
+  }
+  .ops-age {
+    grid-column: 2;
+  }
+  .ops-text {
+    white-space: normal;
+  }
+}
