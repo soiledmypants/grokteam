@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:48:12Z",
+  "generated_utc": "2026-08-12T01:49:00Z",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -61,7 +61,11 @@
       "ath_dump_pct": 37.83,
       "complete": true,
       "decision": "HOLD",
-      "decision_note": "pnl -8.86% (need +35 TP / -35 stop); ath_dump 37.83% (<40 or reserves not collapsing \u2014 graduated pumpswap); age ~2m (<45m time-stop)"
+      "decision_note": "pnl -8.86% (need +35 TP / -35 stop); ath_dump 37.83% (<40 or reserves not collapsing \u2014 graduated pumpswap); age ~2m (<45m time-stop)",
+      "image_url": "https://ipfs.io/ipfs/bafybeiftufqstvgefbsw4lmpihg525hg72xgiuubecux2mfhd3uw7eja3i",
+      "image_uri": "https://ipfs.io/ipfs/bafybeiftufqstvgefbsw4lmpihg525hg72xgiuubecux2mfhd3uw7eja3i",
+      "symbol": "BAGWORKER",
+      "description": "Bag Worker"
     }
   ],
   "closed_positions": [
