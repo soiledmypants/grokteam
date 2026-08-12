@@ -327,21 +327,48 @@
 
 
 
-  function renderTreasury(treasury) {
+  function renderTreasury(treasury, feed) {
     const t = treasury || {};
+    const book = (feed && feed.book) || {};
     const walletEl = $("treasury-value");
     const statusEl = $("fee-status");
     const caEl = $("ca-value");
-    const wallet = t.trading_wallet || t.fee_destination_wallet;
+    const caCopyText = $("ca-copy-text");
+    const wallet =
+      t.trading_wallet ||
+      t.fee_destination_wallet ||
+      "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU";
     if (walletEl) {
-      walletEl.textContent = wallet || "trading wallet soon";
+      walletEl.textContent = wallet;
     }
+
+    const mint =
+      t.project_coin_mint ||
+      book.project_coin_mint ||
+      (feed && feed.project_coin_mint) ||
+      null;
+
     if (statusEl) {
-      const st = t.fee_routing_status || "pending";
-      statusEl.textContent = "fee routing: " + String(st).replace(/_/g, " ");
+      if (mint && (t.fee_routing_status === "active" || t.fee_mechanism === "auto_swap")) {
+        statusEl.textContent = "fee routing: auto-swap → trading wallet";
+      } else if (mint) {
+        statusEl.textContent = "fee routing: mint live · wiring auto-swap → trading wallet";
+      } else {
+        const st = t.fee_routing_status || "waiting_on_project_mint";
+        statusEl.textContent = "fee routing: " + String(st).replace(/_/g, " ");
+      }
     }
-    if (caEl && t.project_coin_mint) {
-      caEl.textContent = t.project_coin_mint;
+
+    if (caEl) {
+      if (mint) {
+        caEl.textContent = mint;
+        if (caCopyText) {
+          caCopyText.textContent =
+            "official project mint. fees auto-swap to the trading wallet for more small buys under caps. verify against @thegrokteam only.";
+        }
+      } else if (!caEl.textContent || caEl.textContent === CA_PLACEHOLDER) {
+        caEl.textContent = CA_PLACEHOLDER;
+      }
     }
   }
 
@@ -494,7 +521,7 @@
       dashCache = feed;
       renderHeader(feed);
       renderCaps(feed.book);
-      renderTreasury(feed.treasury);
+      renderTreasury(feed.treasury, feed);
       renderSetup(feed.setup);
       renderOpen(feed.open_positions || []);
       renderClosed(feed.closed_positions || []);
@@ -659,8 +686,41 @@
     });
   }
 
+
+  function wireTreasuryCopy() {
+    const field = $("treasury-field");
+    const value = $("treasury-value");
+    const label = $("treasury-copy-label");
+    if (!field || !value) return;
+    const copy = async () => {
+      const text = value.textContent.trim();
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        if (label) {
+          label.textContent = "Copied";
+          setTimeout(() => (label.textContent = "Copy"), 1400);
+        }
+      } catch {
+        if (label) label.textContent = "Fail";
+      }
+    };
+    field.addEventListener("click", copy);
+    field.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        copy();
+      }
+    });
+    $("treasury-copy")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      copy();
+    });
+  }
+
   wirePowTabs();
   wireCa();
+  wireTreasuryCopy();
   wireMintCopy();
   loadFeed();
   loadPow();

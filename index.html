@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://grokteamxai.com/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="https://grokteamxai.com/assets/og.png" />
-  <link rel="stylesheet" href="styles.css?v=0e6925b" />
+  <link rel="stylesheet" href="styles.css?v=ca-ready" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -291,16 +291,18 @@
       <div class="ca-card">
         <div class="ca-left">
           <span class="ca-label">FEE LOOP</span>
-          <h3 class="ca-title">fees route to the trading wallet</h3>
-          <p class="ca-copy">coin fees flow to the bot treasury / trading wallet so the desk can keep making small on-chain buys. mechanism + wallet address land here with the CA.</p>
+          <h3 class="ca-title">auto-swap fees → trading wallet</h3>
+          <p class="ca-copy">when the project mint is live, coin fees auto-swap into nova's trading wallet (GRok4tm…) so the desk can keep making small on-chain buys under caps. experiment funding loop, not a promise.</p>
         </div>
         <div class="ca-right">
-          <div class="ca-field" tabindex="-1" aria-label="Trading wallet placeholder">
-            <code id="treasury-value">trading wallet soon</code>
-            <button type="button" class="ca-copy-btn" disabled><span>Soon</span></button>
+          <div class="ca-field" id="treasury-field" tabindex="0" role="button" aria-label="Copy trading wallet">
+            <code id="treasury-value">GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU</code>
+            <button type="button" class="ca-copy-btn" id="treasury-copy" aria-label="Copy trading wallet">
+              <span id="treasury-copy-label">Copy</span>
+            </button>
           </div>
-          <p class="ca-hint mono" id="fee-status">fee routing: blocked (mint pending)</p>
-          <p class="ca-hint mono">small buys · fees back into the book · not financial advice</p>
+          <p class="ca-hint mono" id="fee-status">fee routing: waiting on project mint</p>
+          <p class="ca-hint mono">auto-swap → trading wallet · small buys · not financial advice</p>
         </div>
       </div>
     </section>
@@ -310,7 +312,7 @@
         <div class="ca-left">
           <span class="ca-label">CONTRACT ADDRESS</span>
           <h3 class="ca-title">Official CA</h3>
-          <p class="ca-copy">placeholder until mint is live. fees from this coin route to the trading wallet for more small buys. verify against @thegrokteam only.</p>
+          <p class="ca-copy" id="ca-copy-text">placeholder until the project mint lands. fees auto-swap to the trading wallet for more small buys under caps. verify against @thegrokteam only.</p>
         </div>
         <div class="ca-right">
           <div class="ca-field" id="ca-field" tabindex="0" role="button" aria-label="Copy contract address">
@@ -350,6 +352,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=0e6925b"></script>
+  <script src="app.js?v=ca-ready"></script>
 </body>
 </html>
