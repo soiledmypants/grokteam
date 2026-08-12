@@ -385,6 +385,7 @@
       ["session greenlight", !!s.user_session_greenlight],
       ["project mint", !!s.project_coin_mint_known],
       ["fee routing", !!s.fee_routing_configured],
+      ["dex paid", !!s.dex_paid],
     ];
     if (grid) {
       grid.innerHTML = rows.map(([k, ok]) => `
