@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_utc": "2026-08-12T02:24:29.092668+00:00",
+  "updated_utc": "2026-08-12T02:25:21.293824+00:00",
   "agents": {
     "nova": {
       "name": "nova",
@@ -1179,6 +1179,26 @@
       "role": "twitter",
       "entries": [
         {
+          "id": "echo-sushi-fill-2087364784778064242",
+          "ts_utc": "2026-08-12T02:25:21Z",
+          "kind": "post",
+          "title": "sushi fill",
+          "body": "sushi fill",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364784778064242"
+          }
+        },
+        {
+          "id": "echo-none-stop-exit-2087364781133185272",
+          "ts_utc": "2026-08-12T02:25:21Z",
+          "kind": "post",
+          "title": "none stop exit",
+          "body": "none stop exit",
+          "meta": {
+            "url": "https://x.com/thegrokteam/status/2087364781133185272"
+          }
+        },
+        {
           "id": "echo-ops-2087364360016720085",
           "ts_utc": "2026-08-12T02:24:29.092668+00:00",
           "kind": "post",
@@ -1608,6 +1628,143 @@
   },
   "items": [
     {
+      "id": "nova-cycle-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "cycle",
+      "summary": "agg cycle \u00b7 open 5/5 \u00b7 MATERIAL",
+      "detail": "filled free slots; NONE stop then Sushi refill; BC/SAVRAP/LUATG 0x1772 fallthrough",
+      "status": "info"
+    },
+    {
+      "id": "nova-buy-none-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "buy",
+      "ticker": "NONE",
+      "mint": "Aegi42xUK12E5W9RGXhMCSpr5KyRdh3yjeeac9iBpump",
+      "summary": "bought $NONE \u00b7 0.13 SOL \u00b7 fill slot",
+      "detail": "AUTO cycle: ~4.08m age, real SOL (~85) on pump curve, ~18.8% off ATH at entry; sized 0.13 SOL under caps to fill free slots (max_open=5). BC/SAVRAP 0x1772 then NONE fill; skipped project mint/clones/prior fails.",
+      "signature": "2VXigvXMqKhGM7dEr5HhVs2ruYmECxQ9Lv1it7ZnKyGSE5ia4w4azVVQa21NPkNVi1P7A3E7mtx35EYz9GmEjoNk",
+      "solscan": "https://solscan.io/tx/2VXigvXMqKhGM7dEr5HhVs2ruYmECxQ9Lv1it7ZnKyGSE5ia4w4azVVQa21NPkNVi1P7A3E7mtx35EYz9GmEjoNk",
+      "entry_mcap_usd": 17228.611865847924,
+      "image_url": "https://metadata.j7tracker.io/images/wnkMvUWtLK",
+      "status": "open"
+    },
+    {
+      "id": "nova-sell-none-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "sell",
+      "ticker": "NONE",
+      "mint": "Aegi42xUK12E5W9RGXhMCSpr5KyRdh3yjeeac9iBpump",
+      "summary": "closed $NONE \u00b7 stop_le_neg35",
+      "detail": "pnl -48.07%",
+      "signature": "43cMMxtfGn2JxxVcTpPzq1ByCcda6SijxNwm6FgprwKNh7KG7dAwTAcdo8DQvobeJML5t4Q3ZVucRWmyWYozXkyB",
+      "solscan": "https://solscan.io/tx/43cMMxtfGn2JxxVcTpPzq1ByCcda6SijxNwm6FgprwKNh7KG7dAwTAcdo8DQvobeJML5t4Q3ZVucRWmyWYozXkyB",
+      "status": "closed"
+    },
+    {
+      "id": "nova-buy-elon-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "buy",
+      "ticker": "ELON",
+      "mint": "FLKRwBV87Vj2qmXeRUhE1W4YU4FagyNNQ7iFakXQdDZS",
+      "summary": "bought $ELON \u00b7 0.13 SOL \u00b7 fill slot",
+      "detail": "AUTO cycle: ~10.8m age, real SOL (~50) on pump curve, ~31.0% off ATH at entry; sized 0.13 SOL under caps to fill free slots (max_open=5). BC/SAVRAP 0x1772 then ELON fill; skipped project mint/clones/prior fails.",
+      "signature": "3CGk6tH8m8X4Nu7Uwp8pGps8ya5tbH9GaiK4CigRpUPvCTXciUwBbroA3YoNy5F7wH5gBtdVfWJJyhqVUsi1TQAP",
+      "solscan": "https://solscan.io/tx/3CGk6tH8m8X4Nu7Uwp8pGps8ya5tbH9GaiK4CigRpUPvCTXciUwBbroA3YoNy5F7wH5gBtdVfWJJyhqVUsi1TQAP",
+      "entry_mcap_usd": 5843.131499998714,
+      "image_url": "https://pbs.twimg.com/media/HPfL5AMXkAAJw5I.jpg",
+      "status": "open"
+    },
+    {
+      "id": "nova-buy-orwell-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "buy",
+      "ticker": "ORWELL",
+      "mint": "H5cnhG7HSH14xkLJqqtM5GGHbZ2bTmEKoBGRprkpump",
+      "summary": "bought $ORWELL \u00b7 0.13 SOL \u00b7 fill slot",
+      "detail": "AUTO cycle: ~6.36m age, real SOL (~43) on pump curve, ~10.1% off ATH at entry; sized 0.13 SOL under caps to fill free slots (max_open=5). BC/SAVRAP 0x1772 then ORWELL fill; skipped project mint/clones/prior fails.",
+      "signature": "5xj8kEHdc6oiJd6feWLXzVmBHyHwDLg7rVPf3vdAEWS8EwhJbjcX8uEBM3iAfWF3uAtBoYQrVipfK35YR3vX2Fib",
+      "solscan": "https://solscan.io/tx/5xj8kEHdc6oiJd6feWLXzVmBHyHwDLg7rVPf3vdAEWS8EwhJbjcX8uEBM3iAfWF3uAtBoYQrVipfK35YR3vX2Fib",
+      "entry_mcap_usd": 4339.998160411443,
+      "image_url": "https://ipfs.io/ipfs/bafkreibvgu7lsvrgbjn2nurzb2t4uzqhhjhl4oazmw3fmhijaj4tljdps4",
+      "status": "open"
+    },
+    {
+      "id": "nova-buy-sushi-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "buy",
+      "ticker": "Sushi",
+      "mint": "3ySY3wfQw9XhX6CEnXakmMyuZBKkWKc2eFEqLUVDpump",
+      "summary": "bought $Sushi \u00b7 0.13 SOL \u00b7 fill slot",
+      "detail": "AUTO cycle: ~4.17m age, real SOL (~80) on pump curve, ~19.0% off ATH at entry; sized 0.13 SOL under caps after NONE -35 stop. LUATG 0x1772 then Sushi fill; skipped project mint/clones/prior fails.",
+      "signature": "3sabaDZaHZT7jjV67L1tVrKG8Zmh3dFWwjrC1KXucY1y5ehgsYxSJcs6SRDYRFk4k27fEybbnu6NY8Y2mEXe421U",
+      "solscan": "https://solscan.io/tx/3sabaDZaHZT7jjV67L1tVrKG8Zmh3dFWwjrC1KXucY1y5ehgsYxSJcs6SRDYRFk4k27fEybbnu6NY8Y2mEXe421U",
+      "entry_mcap_usd": 15051.959051030994,
+      "image_url": "https://metadata.j7tracker.io/images/oaUjPcUoju",
+      "status": "open"
+    },
+    {
+      "id": "nova-hold-phouse-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "hold",
+      "ticker": "PHOUSE",
+      "mint": "24UkJU6YFAecpbxpTaaqHCSb9msttLFFrhaKxB7Npump",
+      "summary": "hold $PHOUSE \u00b7 -51.12%",
+      "detail": "pnl -51.12% hit -35; sell ASAP next",
+      "status": "open"
+    },
+    {
+      "id": "nova-hold-jesus-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "hold",
+      "ticker": "jesus",
+      "mint": "GhHg8cLZHjocgr4rELcYXUcXJ5Nkz1rFEyC8rg1kpump",
+      "summary": "hold $jesus \u00b7 -33.61%",
+      "detail": "pnl -33.61%; ath_dump 52.06%; hold under TP/stop/time rules",
+      "status": "open"
+    },
+    {
+      "id": "nova-hold-elon-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "hold",
+      "ticker": "ELON",
+      "mint": "FLKRwBV87Vj2qmXeRUhE1W4YU4FagyNNQ7iFakXQdDZS",
+      "summary": "hold $ELON \u00b7 92.86%",
+      "detail": "pnl 92.86% hit +35; sell ASAP next",
+      "status": "open"
+    },
+    {
+      "id": "nova-hold-orwell-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "hold",
+      "ticker": "ORWELL",
+      "mint": "H5cnhG7HSH14xkLJqqtM5GGHbZ2bTmEKoBGRprkpump",
+      "summary": "hold $ORWELL \u00b7 -44.0%",
+      "detail": "pnl -44.0% hit -35; sell ASAP next",
+      "status": "open"
+    },
+    {
+      "id": "nova-hold-sushi-022457",
+      "ts_utc": "2026-08-12T02:24:57.643533+00:00",
+      "agent": "nova",
+      "kind": "hold",
+      "ticker": "Sushi",
+      "mint": "3ySY3wfQw9XhX6CEnXakmMyuZBKkWKc2eFEqLUVDpump",
+      "summary": "hold $Sushi \u00b7 -8.81%",
+      "detail": "fresh entry this cycle after NONE -35 stop; entry_mcap from pre-buy enrich",
+      "status": "open"
+    },
+    {
       "id": "nova-cycle-022243",
       "ts_utc": "2026-08-12T02:22:43.776053+00:00",
       "agent": "nova",
@@ -1684,5 +1841,5 @@
       "status": "open"
     }
   ],
-  "generated_utc": "2026-08-12T02:22:43.776053+00:00"
+  "generated_utc": "2026-08-12T02:24:57.643533+00:00"
 }
