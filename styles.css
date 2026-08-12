@@ -1310,3 +1310,33 @@ a:hover { color: var(--amber); }
   margin-bottom: 0.1rem;
 }
 .fee-stat-v { color: var(--text); }
+
+
+.decision-badge {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.decision-badge.is-hold {
+  color: var(--amber);
+  border-color: rgba(201, 162, 39, 0.45);
+  background: var(--amber-dim);
+}
+.decision-badge.is-exit {
+  color: var(--red);
+  border-color: rgba(196, 92, 92, 0.45);
+  background: var(--red-dim);
+}
+.decision-badge.is-on {
+  color: var(--green);
+  border-color: rgba(61, 154, 106, 0.45);
+  background: var(--green-dim);
+}
+.pos-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

@@ -175,8 +175,10 @@
         const avatar = img
           ? `<div class="pos-avatar"><img src="${escapeHtml(img)}" alt="" loading="lazy" /></div>`
           : `<div class="pos-avatar placeholder" aria-hidden="true">${escapeHtml(letter)}</div>`;
-        const decision = p.decision
-          ? `<span class="decision-badge">${escapeHtml(String(p.decision).toUpperCase())}</span>`
+        const decisionRaw = p.decision ? String(p.decision).toUpperCase() : "";
+        const decisionCls = decisionRaw === "HOLD" ? "is-hold" : decisionRaw === "EXIT" || decisionRaw === "SELL" ? "is-exit" : decisionRaw ? "is-on" : "";
+        const decision = decisionRaw
+          ? `<span class="decision-badge ${decisionCls}">${escapeHtml(decisionRaw)}</span>`
           : "";
         const mint = p.mint || p.ca || "";
         const mintLine = mint
@@ -240,6 +242,14 @@
                   ${markPending ? "- · mark pending" : escapeHtml(markLine)}
                 </span>
               </div>
+              <div>
+                <span class="metric-k">ATH dump</span>
+                <span class="metric-v">${p.ath_dump_pct != null ? escapeHtml(Number(p.ath_dump_pct).toFixed(1) + "%") : "-"}</span>
+              </div>
+              <div>
+                <span class="metric-k">Decision</span>
+                <span class="metric-v">${decisionRaw ? escapeHtml(decisionRaw) : "-"}</span>
+              </div>
             </div>
             ${mintLine}
             ${sigLine}
@@ -249,6 +259,7 @@
               <div class="block-label">Thesis</div>
               <p class="block-body">${escapeHtml(p.thesis)}</p>
             </div>
+            ${p.decision_note ? `<div><div class="block-label">Decision note</div><p class="block-body">${escapeHtml(p.decision_note)}</p></div>` : ""}
             ${desc}
             <div>
               <div class="block-label">Invalidation</div>
