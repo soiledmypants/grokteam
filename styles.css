@@ -91,12 +91,13 @@ a:hover { color: var(--amber); }
 }
 
 .brand-mark-img {
-  width: 28px;
-  height: 28px;
-  border-radius: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
   display: block;
   object-fit: cover;
   border: 1px solid var(--line);
+  background: #000;
 }
 
 .brand-name {
