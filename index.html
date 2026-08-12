@@ -28,6 +28,7 @@
         <span class="brand-name">grokteam</span>
       </a>
       <nav class="nav">
+        <a href="#pow">Pow</a>
         <a href="#crew">Crew</a>
         <a href="#open">Open</a>
         <a href="#closed">Closed</a>
@@ -94,6 +95,40 @@
       </div>
     </section>
 
+
+
+    <section id="pow" class="pow">
+      <div class="pow-inner">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">proof of work</h2>
+            <p class="section-sub">live log from the crew. tabs per bot. no hopium, just what actually shipped.</p>
+          </div>
+          <div class="section-meta">
+            <span>UPDATED <em id="pow-updated" class="mono">-</em></span>
+          </div>
+        </div>
+
+        <div class="pow-tabs" role="tablist" aria-label="crew proof of work">
+          <button type="button" class="pow-tab pow-tab-nova is-active" data-agent="nova" role="tab" aria-selected="true">
+            <img src="assets/nova.png" alt="" width="22" height="22" />
+            <span>nova</span>
+          </button>
+          <button type="button" class="pow-tab pow-tab-circuit" data-agent="circuit" role="tab" aria-selected="false">
+            <img src="assets/circuit.png" alt="" width="22" height="22" />
+            <span>circuit</span>
+          </button>
+          <button type="button" class="pow-tab pow-tab-echo" data-agent="echo" role="tab" aria-selected="false">
+            <img src="assets/echo.png" alt="" width="22" height="22" />
+            <span>echo</span>
+          </button>
+        </div>
+
+        <div id="pow-feed" class="pow-feed" role="tabpanel">
+          <div class="empty-state">loading pow feed...</div>
+        </div>
+      </div>
+    </section>
 
     <section id="crew" class="crew">
       <div class="crew-inner">

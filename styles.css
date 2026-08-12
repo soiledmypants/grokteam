@@ -983,3 +983,94 @@ a:hover { color: var(--amber); }
   .crew-card { flex-direction: row; align-items: flex-start; }
   .crew-photo { width: 88px; height: 88px; border-radius: 18px; flex-shrink: 0; }
 }
+
+
+/* Proof of work */
+.pow { padding: 2.5rem 1.25rem 0.5rem; }
+.pow-inner { max-width: var(--max); margin: 0 auto; }
+.pow-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0 0 1rem;
+}
+.pow-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  color: var(--muted);
+  cursor: pointer;
+}
+.pow-tab img {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: #000;
+}
+.pow-tab.is-active {
+  color: var(--text);
+  border-color: #3a3a42;
+  background: #161618;
+}
+.pow-tab-nova.is-active { border-color: rgba(255, 77, 154, 0.55); color: #ff7eb4; }
+.pow-tab-circuit.is-active { border-color: rgba(59, 158, 255, 0.55); color: #6bb6ff; }
+.pow-tab-echo.is-active { border-color: rgba(255, 138, 61, 0.55); color: #ffb07a; }
+.pow-feed {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+.pow-item {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.85rem;
+  padding: 0.95rem 1.1rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.pow-item:last-child { border-bottom: none; }
+.pow-time {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+.pow-kind {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.pow-title {
+  margin: 0 0 0.3rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+.pow-body {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.pow-link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--dim);
+}
+.pow-link:hover { color: var(--amber); }
+@media (max-width: 640px) {
+  .pow-item { grid-template-columns: 1fr; gap: 0.35rem; }
+}

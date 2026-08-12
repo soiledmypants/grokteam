@@ -359,12 +359,14 @@
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const feed = await res.json();
 
+      dashCache = feed;
       renderHeader(feed);
       renderCaps(feed.book);
       renderTreasury(feed.treasury);
       renderSetup(feed.setup);
       renderOpen(feed.open_positions || []);
       renderClosed(feed.closed_positions || []);
+      renderPow();
     } catch (err) {
       console.error("Feed load failed", err);
       const grid = $("open-grid");
@@ -374,6 +376,120 @@
     }
   }
 
+
+  const POW_URL = "./data/pow_feed.json";
+  const FEED_URL_DUP = FEED_URL; // dashboard
+  let powAgent = "nova";
+  let powCache = null;
+  let dashCache = null;
+
+  function sortEntries(entries) {
+    return (entries || []).slice().sort((a, b) => Date.parse(b.ts_utc || 0) - Date.parse(a.ts_utc || 0));
+  }
+
+  function novaTradeEntries(feed) {
+    const out = [];
+    for (const p of feed.open_positions || []) {
+      out.push({
+        id: "trade-open-" + (p.id || p.ticker),
+        ts_utc: p.entry_ts_utc || p.updated_utc || feed.generated_utc,
+        kind: "trade",
+        title: "open $" + (p.ticker || "?") + (p.setup_grade ? " · grade " + p.setup_grade : ""),
+        body: (p.thesis || "thesis pending") + (p.invalidation ? " | invalidate: " + p.invalidation : ""),
+        meta: {
+          status: "open",
+          mint: p.mint,
+          url: p.url,
+          notional_usd: p.notional_usd,
+          entry_mcap_usd: p.entry_mcap_usd,
+        },
+      });
+    }
+    for (const p of feed.closed_positions || []) {
+      const pnl = p.pnl_usd == null ? "" : " · " + fmtUsd(p.pnl_usd, { signed: true });
+      out.push({
+        id: "trade-closed-" + (p.id || p.ticker),
+        ts_utc: p.updated_utc || feed.generated_utc,
+        kind: "trade",
+        title: "closed $" + (p.ticker || "?") + pnl,
+        body: (p.thesis || "-") + (p.exit_rule ? " | exit: " + p.exit_rule : ""),
+        meta: { status: "closed", mint: p.mint, pnl_usd: p.pnl_usd, pnl_pct: p.pnl_pct },
+      });
+    }
+    return out;
+  }
+
+  function renderPow() {
+    const root = $("pow-feed");
+    if (!root || !powCache) return;
+    const agent = powCache.agents && powCache.agents[powAgent];
+    let entries = agent ? sortEntries(agent.entries) : [];
+    if (powAgent === "nova" && dashCache) {
+      const trades = novaTradeEntries(dashCache);
+      const ids = new Set(entries.map((e) => e.id));
+      for (const t of trades) {
+        if (!ids.has(t.id)) entries.push(t);
+      }
+      entries = sortEntries(entries);
+    }
+    if ($("pow-updated")) {
+      $("pow-updated").textContent = relativeAge(powCache.updated_utc).replace(" ago", "") || "-";
+    }
+    if (!entries.length) {
+      root.innerHTML = `<div class="empty-state">no pow entries yet for ${escapeHtml(powAgent)}</div>`;
+      return;
+    }
+    root.innerHTML = entries
+      .map((e) => {
+        const link = e.meta && e.meta.url
+          ? `<a class="pow-link" href="${escapeHtml(e.meta.url)}" target="_blank" rel="noopener noreferrer">open ↗</a>`
+          : "";
+        return `<article class="pow-item">
+          <div>
+            <div class="pow-time mono">${escapeHtml(relativeAge(e.ts_utc))}</div>
+            <div class="pow-kind">${escapeHtml(e.kind || "note")}</div>
+          </div>
+          <div>
+            <h3 class="pow-title">${escapeHtml(e.title || "")}</h3>
+            <p class="pow-body">${escapeHtml(cleanCopy(e.body || ""))}</p>
+            ${link}
+          </div>
+        </article>`;
+      })
+      .join("");
+  }
+
+  function wirePowTabs() {
+    document.querySelectorAll(".pow-tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        powAgent = btn.getAttribute("data-agent") || "nova";
+        document.querySelectorAll(".pow-tab").forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        renderPow();
+      });
+    });
+  }
+
+  async function loadPow() {
+    try {
+      const res = await fetch(POW_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error("pow http " + res.status);
+      powCache = await res.json();
+      renderPow();
+    } catch (err) {
+      console.error(err);
+      const root = $("pow-feed");
+      if (root) root.innerHTML = `<div class="error-state">could not load pow feed</div>`;
+    }
+  }
+
+  wirePowTabs();
   wireCa();
   loadFeed();
+  loadPow();
+  setInterval(loadPow, 8000);
+  setInterval(loadFeed, 15000);
 })();
