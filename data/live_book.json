@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T02:16:25.152554+00:00",
+  "generated_utc": "2026-08-12T02:16:56.103119+00:00",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -26,15 +26,50 @@
   },
   "pnl": {
     "realized_usd": -15.8355,
-    "unrealized_usd": -4.2294,
-    "open_count": 2,
+    "unrealized_usd": -13.8795,
+    "open_count": 4,
     "closed_count": 7,
     "currency": "USD",
-    "unrealized_sol": -0.055336,
+    "unrealized_sol": -0.181595,
     "sol_usd": 76.43,
     "realized_sol": -0.207165
   },
   "open_positions": [
+    {
+      "id": "live-auto-4",
+      "status": "open",
+      "mode": "live",
+      "ticker": "PLEAZY",
+      "name": "PLEAZY",
+      "symbol": "PLEAZY",
+      "description": "PLEAZY",
+      "mint": "9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+      "url": "https://pump.fun/coin/9Zyqc4b8iTeF9oxYjcsj2WQ6oUNG6c5cSwaTs85opump",
+      "notional_sol": 0.13,
+      "entry_ts_utc": "2026-08-12T01:57:52.989653+00:00",
+      "entry_sig": "5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+      "solscan": "https://solscan.io/tx/5yVoNNfUemEYMEsmhWf9VX7iKzZ48r2d8qDRwxqUuwSSG27wSHTFpAihPwWeJ8vUJ8FrvRU9PXmYoxUYP7LW9J6N",
+      "thesis": "AUTO cycle: ~13.1m age, real SOL (~60) on pump curve, ~16.0% off ATH at entry; sized 0.13 SOL under caps. Skipped project mint/BEARBULL/gngc(0x1772)/SVJ clones.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 7154.269487432113,
+      "image_url": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
+      "image_uri": "https://api.vortexdeployer.com/image/655378b5-795e-41dd-acb0-7f92cb19496b.webp",
+      "mark_mcap_usd": 5300.909024776503,
+      "ath_mcap_usd": 9247.253322158875,
+      "ath_dump_pct": 42.68,
+      "notional_usd": 9.9359,
+      "pnl_pct": -25.91,
+      "pnl_usd": -2.574,
+      "pnl_sol": -0.033677,
+      "unrealized_usd": -2.574,
+      "unrealized_sol": -0.033677,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "pnl -25.91%; ath_dump 42.68%; hold under TP/stop/time rules",
+      "vres_sol": 47.237
+    },
     {
       "id": "live-auto-8",
       "status": "open",
@@ -104,6 +139,41 @@
       "image_url": "https://ipfs.io/ipfs/bafkreigsnu27vvlqfywijaab2nuaq72aycyliwdlou72svaj6b53mzpisq",
       "image_uri": "https://ipfs.io/ipfs/bafkreigsnu27vvlqfywijaab2nuaq72aycyliwdlou72svaj6b53mzpisq",
       "vres_sol": 34.694
+    },
+    {
+      "id": "live-auto-11",
+      "status": "open",
+      "mode": "live",
+      "ticker": "POPCAT",
+      "name": "POPCAT",
+      "symbol": "POPCAT",
+      "description": "POPCAT",
+      "mint": "8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+      "url": "https://pump.fun/coin/8ezAg9zxcS351pks3Me3pPbypaDbCE6dcxrRFbKwpump",
+      "notional_sol": 0.13,
+      "notional_usd": 9.9359,
+      "entry_ts_utc": "2026-08-12T02:11:40.710371+00:00",
+      "entry_sig": "2bzACRLrbXmkUJm673g2SZPoWs1o9Xq7h3Cr8iYxZwkVfT6BY26BnSXhXAegAvZiiBPafCqEzYkJ4unqbdYPY1sN",
+      "solscan": "https://solscan.io/tx/2bzACRLrbXmkUJm673g2SZPoWs1o9Xq7h3Cr8iYxZwkVfT6BY26BnSXhXAegAvZiiBPafCqEzYkJ4unqbdYPY1sN",
+      "thesis": "AUTO cycle: ~3.2m age, real SOL (~60) on pump curve, ~22.7% off ATH at entry; sized 0.13 SOL under caps after Plumber64 TP slot free. Skipped project mint/BEARBULL fails/clones/recent 0x1772 fails.",
+      "invalidation": ">40% ATH dump with collapsing reserves, hard rug, or -35% stop; no average down",
+      "setup_grade": "B+",
+      "agent": "nova",
+      "entry_mcap_usd": 8468.476712855074,
+      "image_url": "https://metadata.j7tracker.io/images/ZpWZQWiG89",
+      "image_uri": "https://metadata.j7tracker.io/images/ZpWZQWiG89",
+      "mark_mcap_usd": 2437.4719483426356,
+      "ath_mcap_usd": 10949.442644454317,
+      "ath_dump_pct": 77.74,
+      "pnl_pct": -71.22,
+      "pnl_usd": -7.0761,
+      "pnl_sol": -0.092582,
+      "unrealized_usd": -7.0761,
+      "unrealized_sol": -0.092582,
+      "complete": false,
+      "decision": "HOLD",
+      "decision_note": "pnl -71.22%; ath_dump 77.74%; hold under TP/stop/time rules",
+      "vres_sol": 32.03
     }
   ],
   "closed_positions": [
@@ -404,7 +474,7 @@
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "fee_routing_status": "active",
     "note": "fees claimed; trading active; inbound fee SOL = capital inside caps",
-    "updated_utc": "2026-08-12T02:16:25.152554+00:00"
+    "updated_utc": "2026-08-12T02:16:56.103119+00:00"
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -456,11 +526,11 @@
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
     "burner_pubkey": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "burner_sol": 3.029309675,
+    "burner_sol": 2.862528077,
     "helius_ready": true,
     "dex_paid": true,
     "rpc_host": "mainnet.helius-rpc.com",
-    "updated_utc": "2026-08-12T02:16:25.152554+00:00"
+    "updated_utc": "2026-08-12T02:16:56.103119+00:00"
   },
   "pull": {
     "method": "agent_push_or_request",
@@ -472,23 +542,19 @@
     ]
   },
   "last_cycle": {
-    "ts_utc": "2026-08-12T02:16:25.152554+00:00",
-    "type": "auto_small_live_capped_quick_tp_stop",
+    "ts_utc": "2026-08-12T02:16:56.103119+00:00",
+    "type": "auto_small_live_capped_tp_refill",
     "opens": [
+      "PLEAZY",
       "PHOUSE",
-      "jesus"
+      "jesus",
+      "POPCAT"
     ],
     "material": true,
     "slot_freed": true,
-    "sells": [
-      "Plumber64",
-      "PLEAZY",
-      "POPCAT"
-    ],
-    "buys": [
-      "POPCAT",
-      "PHOUSE",
-      "jesus"
-    ]
+    "buy_ticker": "POPCAT",
+    "buy_sig": "2bzACRLrbXmkUJm673g2SZPoWs1o9Xq7h3Cr8iYxZwkVfT6BY26BnSXhXAegAvZiiBPafCqEzYkJ4unqbdYPY1sN",
+    "sell_ticker": "Plumber64",
+    "sell_sig": "2pBnZzrZXvMFmfsL632f3ipPcGXX4dwGchc4DuvGwWtw2CYspvvPugUfAXPMiHR284qUTGQYKzCCUNCwQpMXzi8m"
   }
 }
