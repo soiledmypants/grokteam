@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_utc": "2026-08-12T01:53:13.937579+00:00",
+  "generated_utc": "2026-08-12T01:56:08Z",
   "mode": "live",
   "book": {
     "risk_capital_usd_max": 100,
@@ -20,7 +20,8 @@
     "public_url": "https://grokteamxai.com/",
     "smoke_tests_active": false,
     "default_entry_sol": 0.13,
-    "max_entry_sol": 0.26
+    "max_entry_sol": 0.26,
+    "project_coin_mint": "DfxZvyyQLc91nMnWgN7r7brKzDkgVZN1cBwFXuP5pump"
   },
   "pnl": {
     "realized_usd": -7.3888,
@@ -146,12 +147,12 @@
     }
   ],
   "treasury": {
-    "project_coin_mint": null,
-    "fee_mechanism": null,
-    "fee_destination_wallet": null,
+    "project_coin_mint": "DfxZvyyQLc91nMnWgN7r7brKzDkgVZN1cBwFXuP5pump",
+    "fee_mechanism": "auto_swap",
+    "fee_destination_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
     "trading_wallet": "GRok4tm5vfjVQobbe2UMznM7SkuMonPayA1Zk1m2uPRU",
-    "fee_routing_status": "blocked_missing_mint",
-    "note": "Fees from THE COIN must fund the trading wallet. Path TBD once mint + mechanism confirmed."
+    "fee_routing_status": "active",
+    "note": "Project coin fees auto-swap to trading burner as capital inside hard caps."
   },
   "signals": {
     "kol_source": "https://kolscan.io/",
@@ -197,8 +198,8 @@
     "execution_path_ready": true,
     "secure_key_stored": true,
     "user_session_greenlight": true,
-    "project_coin_mint_known": false,
-    "fee_routing_configured": false,
+    "project_coin_mint_known": true,
+    "fee_routing_configured": true,
     "note": "AUTO ARMED: small live buys+exits under caps, no per-trade approval. Kill switch on.",
     "ops_mode_proposed": "auto_small_live_capped",
     "rpc_endpoint": "helius_mainnet",
